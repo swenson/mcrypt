@@ -1,0 +1,130 @@
+#{
+
+#include <defines.h>
+
+#}
+
+GETTEXT_STRINGS
+
+helpnode "Mcrypt encrypts and decrypts files with symmetric encryption algorithms.\nUsage: mcrypt [-dFusgbhLvrzp] [-f keyfile] [-k key1 key2 ...] [-m mode] [-o keymode] [-s keysize] [-a algorithm] [-c config_file] [file ...]\n"
+
+
+
+#int openpgp;
+option (g, openpgp) { $openpgp = 1 } "Use the OpenPGP (RFC2440) file format."
+option (no-openpgp) { $openpgp = 0 } "Use the native (mcrypt) file format."
+
+#int openpgp_z;
+option (openpgp-z) INT "INTEGER" { $openpgp_z = $1 } "Sets the compression level for openpgp packets (0 disables)."
+
+
+#int din;
+#int ein;
+#int ed_specified;
+option (d, decrypt) { $ed_specified=1; $din = 1; $ein=0; } "decrypts."
+
+#int keysize;
+option (s, keysize) INT "INTEGER" { $keysize = $1 } "Set the algorithm's key size (in bytes)."
+
+#char *kmode;
+option (o, keymode) STR "KEYMODE" { $kmode = $1 } "Specify the keyword mode. Use the --list-keymodes parameter to view all modes."
+
+#char *keyfile;
+option (f, keyfile) STR "FILE" { $keyfile = $1 } "Specify the file to read the keyword from."
+
+#int config;
+#char *config_file;
+option (c, config) STR "FILE" { $config=1; if (@1==1) $config_file = $1 } "Use configuration file FILE."
+
+#char *algorithm;
+option (a, algorithm) STR "ALGORITHM" { $algorithm = $1 } "Specify the encryption and decryption algorithm. Use the --list parameter to see the supported algorithms."
+
+#char *algorithms_directory;
+option (algorithms-directory) STR "DIRECTORY" { $algorithms_directory = $1 } "Set the algorithms directory."
+
+#char *mode;
+option (m, mode) STR "MODE" { $mode = $1 } "Specify the encryption and decryption mode. Use the --list parameter to see the supported modes."
+
+#char *modes_directory;
+option (modes-directory) STR "DIRECTORY" { $modes_directory = $1 } "Set the modes directory."
+
+#char *hash;
+option (h, hash) STR "HASH" { $hash = $1 } "Specify the hash algorithm to be used. Use the --list-hash parameter to view the hash algorithms."
+
+#int keylen;
+#char **keys;
+option (k, key) *STR "KEY1 KEY2...KEYN" { $keys = $1; $keylen = @1 } "Specify the key(s)"
+
+
+#int noiv;
+option (noiv) { $noiv = 1 } "Do not use an IV."
+
+#int bare_flag;
+option (b, bare) { $bare_flag = 1 } "Do not keep algorithm information in the encrypted file."
+#int gzipflag;
+option (z, gzip) { $gzipflag = 1 } "Use gzip to compress files before encryption."
+
+#int bzipflag;
+option (p, bzip2) { $bzipflag = 1 } "Use bzip2 to compress files before encryption."
+
+
+#int flush;
+option (flush) { $flush = 1 } "Immediately flush the output"
+
+#int double_check;
+option (l, doublecheck) { $double_check = 1 } "Double check passwords."
+
+#int unlink_flag;
+option (u, unlink) { $unlink_flag = 1 } "Unlink the input file after encryption or decryption."
+
+#int nodelete;
+option (nodelete) { $nodelete = 1 } "Do not delete the output file if decryption failed."
+
+
+#int timer;
+option (t, time) { $timer = 1 } "Prints timing information."
+
+#int force;
+option (F, force) { $force = 1 } "Forces output to stdout."
+
+#int noecho;
+option (echo) { $noecho = 0 } "Echo asterisks when entering the password."
+
+#int real_random_flag;
+option (r, random) { $real_random_flag = 1 } "Use real random data (if your system supports it)."
+
+
+option (list) { print_list(); exit(0); } "Prints a list of the supported algorithms and modes."
+option (list-keymodes) { print_keylist(); exit(0); } "Prints a list of the supported key modes."
+option (list-hash) { print_hashlist(); exit(0); } "Prints a list of the supported hash algorithms."
+
+#int quiet;
+option (V, verbose) { $quiet = 0 } "More information is displayed."
+option (q, quiet) { $quiet = 2 } "Suppress some non critical warnings."
+
+
+
+option (help) { usage(); exit(0); } "Prints this help"
+option (v, version) { mcrypt_version(); exit(0); } "Prints the version number"
+option (L, license) { mcrypt_license(); exit(0); } "Displays license information."
+
+#int size;
+#char **input;
+rest optional *STR "FILE1 FILE2...FILEN" { $input = $1; $size = @1 }
+
+init { $force=0; $quiet=1; $real_random_flag=0; $config=0;
+       $bare_flag = 0; $din = 0; $ein=1; $unlink_flag = 0;
+       $kmode = NULL; $keylen=0; $gzipflag=0; $bzipflag=0;
+       $keyfile=NULL; $algorithm=NULL; $keys=NULL; $noiv=0;
+       $config_file=NULL; $mode=NULL; $input=NULL; $ed_specified=0;
+       $double_check=0; $noecho=1; $flush=0; $keysize=0;
+       $algorithms_directory=NULL; $modes_directory=NULL; $nodelete=0;
+       $hash=NULL; $timer=0; $openpgp=1; $openpgp_z = 0; }
+
+INCOMP kf
+INCOMP Vq
+INCOMP zp
+INCOMP mg
+INCOMP bg
+INCOMP gz
+INCOMP gp

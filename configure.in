@@ -1,0 +1,198 @@
+dnl Process this file with autoconf to produce a configure script.
+AC_PREREQ(2.61)
+AC_INIT([mcrypt], [2.6.8])
+dnl AC_CONFIG_HEADER(config.h)
+
+AC_CANONICAL_TARGET
+
+AM_INIT_AUTOMAKE([])
+AM_CONFIG_HEADER(config.h)
+
+AC_DEFINE_UNQUOTED(T_CPU, "$target_cpu", [target CPU])
+AC_DEFINE_UNQUOTED(T_VENDOR, "$target_vendor", [Vendor])
+AC_DEFINE_UNQUOTED(T_OS, "$target_os", [OS])
+
+AC_PROG_LIBTOOL
+AC_PROG_CC
+
+
+AM_PATH_LIBMCRYPT( 2.5.0,, 
+ AC_MSG_ERROR([[*** libmcrypt was not found]])
+)
+
+AC_CHECK_LIB(mhash, mhash_keygen, LIBS="${LIBS} -lmhash",
+  AC_MSG_ERROR("You need at least libmhash 0.8.15 to compile this program. http://mhash.sf.net/"))
+
+AC_MSG_CHECKING([whether mhash >= 0.8.15])
+AC_TRY_RUN([
+#include <mhash.h>
+
+int main() {
+
+if (MHASH_API_VERSION >= 20020524)
+	exit(0);
+else
+	exit(-1);
+}
+],
+dnl	************ CASE >= 0.8.15
+AC_MSG_RESULT(yes)
+,
+dnl	 ************ CASE < 0.8.15
+AC_MSG_RESULT(no)
+AC_MSG_ERROR("You need at least libmhash 0.8.15 to compile this program. http://mhash.sf.net/")
+,
+AC_MSG_RESULT(cross compiling)
+)        
+
+
+dnl For GNU gettext
+ALL_LINGUAS="el cs pl de es_AR"
+
+AM_GNU_GETTEXT([external])
+
+ AC_CHECK_LIB(z, compress,,AC_MSG_WARN(
+*** 
+*** ZLIB was not found. You will not be able to use ZLIB compression
+*** in OpenPGP packets.))
+
+LIBS="${LIBS} ${LIBMCRYPT_LIBS}"
+CFLAGS="${CFLAGS} ${LIBMCRYPT_CFLAGS} -Wall"
+
+
+AC_C_CONST
+
+dnl Checks for programs.
+AC_PROG_INSTALL
+AC_PROG_LN_S
+AC_PATH_PROG(RM,rm)
+
+case "${target}" in
+    *-cygwin*)
+	;;
+    *-mingw*)
+        ;;
+    *)
+	AC_PATH_PROG(GZIP,gzip)
+	AC_DEFINE_UNQUOTED(GZIP, "$GZIP", [gzip pathname])
+	AC_PATH_PROG(BZIP2, bzip2)
+	AC_DEFINE_UNQUOTED(BZIP2, "$BZIP2", [bzip2 pathname])
+        ;;
+esac
+
+dnl AC_PROG_MAKE_SET
+
+dnl From GNUPG
+AC_MSG_CHECKING([whether use of /dev/random is requested])
+AC_ARG_ENABLE(dev-random,
+[  --disable-dev-random    disable the use of dev random],
+    try_dev_random=$enableval, try_dev_random=yes)
+AC_MSG_RESULT($try_dev_random)
+
+
+opt_static_link=no
+AC_MSG_CHECKING([whether static link is requested])
+AC_ARG_ENABLE(static-link,
+[  --enable-static-link    link mcrypt statically (libmcrypt must also be a static library))],
+opt_static_link=$enableval)
+AC_MSG_RESULT($opt_static_link)
+
+opt_maintainer_mode=no
+AC_MSG_CHECKING([whether in maintanance mode])
+AC_ARG_ENABLE(maintainer-mode,
+[  --enable-maintainer-mode enable maintainer mode],
+opt_maintainer_mode=$enableval)
+AC_MSG_RESULT($opt_maintainer_mode)
+
+
+AC_MSG_CHECKING([whether included getpass is requested])
+AC_ARG_ENABLE(included-getpass,
+[  --disable-included-getpass disable-included-getpass],
+    try_getpass=$enableval, try_getpass=yes)
+AC_MSG_RESULT($try_getpass)
+
+if test "$try_getpass" != yes ; then
+ AC_DEFINE(NO_GETPASS, 1, [whether getpass was requested])
+fi
+
+case "${target}" in
+    *-openbsd*)
+        NAME_OF_DEV_RANDOM="/dev/srandom"
+        NAME_OF_DEV_URANDOM="/dev/urandom"
+        ;;
+    *-cygwin*)
+	AC_DEFINE(WIN32, 1, [win32])
+        NAME_OF_DEV_RANDOM=""
+        NAME_OF_DEV_URANDOM=""
+	;;
+    *-mingw*)
+	AC_DEFINE(WIN32, 1, [win32])
+        NAME_OF_DEV_RANDOM=""
+        NAME_OF_DEV_URANDOM=""
+        ;;
+    *)
+        NAME_OF_DEV_RANDOM="/dev/random"
+        NAME_OF_DEV_URANDOM="/dev/urandom"
+        ;;
+esac
+
+AC_DEFINE_UNQUOTED(NAME_OF_DEV_RANDOM, "$NAME_OF_DEV_RANDOM", [path of random])
+AC_DEFINE_UNQUOTED(NAME_OF_DEV_URANDOM, "$NAME_OF_DEV_URANDOM", [path of urandom])
+
+dnl check whether we have a random device
+if test "$try_dev_random" = yes ; then
+AC_CACHE_CHECK(for random device, ac_cv_have_dev_random,
+[if test -c "/dev/random" && test -c "$NAME_OF_DEV_URANDOM" ; then
+  ac_cv_have_dev_random=yes; else ac_cv_have_dev_random=no; fi])
+if test "$ac_cv_have_dev_random" = yes; then
+    AC_DEFINE(HAVE_DEV_RANDOM, 1, [whether /dev/random exists])
+else
+    AC_MSG_WARN(No random device found. No real random data can be used.)
+fi
+else
+    AC_MSG_CHECKING(for random device)
+    ac_cv_have_dev_random=no
+    AC_MSG_RESULT(has been disabled)
+    AC_MSG_WARN(Support for random device was disabled. No real random data can be used.)
+fi
+
+
+if test $ac_cv_c_compiler_gnu = yes; then
+
+	if test $opt_maintainer_mode = yes; then
+	  CFLAGS=" -Wall -Wpointer-arith -O0 -ggdb3"
+	fi
+fi
+
+if test "$opt_static_link" = yes; then
+ 	if test -n "$GCC" || test "$ac_cv_c_compiler_gnu" = "yes"; then
+ 		LDFLAGS="-static $LDFLAGS"
+ 	fi
+fi
+
+AC_C_BIGENDIAN
+AC_TYPE_SIGNAL
+AC_CHECK_SIZEOF(unsigned long int, 4)
+AC_CHECK_SIZEOF(unsigned int, 4)
+AC_CHECK_SIZEOF(unsigned short int, 2)
+AC_CHECK_SIZEOF(unsigned char, 1)
+
+AC_CHECK_TYPE( off_t, 
+  AC_DEFINE( HAVE_OFF_T, 1, [have off_t type]),,
+)
+
+AC_SYS_LARGEFILE
+
+AC_HEADER_STDC
+AC_CHECK_HEADERS(unistd.h pwd.h locale.h strings.h mcrypt.h ctype.h)
+AC_CHECK_HEADERS(sys/stat.h sys/types.h fcntl.h sys/wait.h)
+AC_CHECK_HEADERS(utime.h signal.h)
+AC_CHECK_HEADERS(termios.h termio.h sgtty.h)
+AC_CHECK_FUNCS(bzero signal sigaction memset fsync siglongjmp strlcpy,,)
+AC_CHECK_FUNCS(umask utime memmove bcopy getpwuid waitpid kill ftime,,)
+AC_CHECK_FUNCS(lstat stat fseeko,,)
+
+
+AC_CONFIG_FILES([Makefile doc/Makefile src/Makefile po/Makefile.in])
+AC_CONFIG_COMMANDS([default],[[]],[[]])
+AC_OUTPUT

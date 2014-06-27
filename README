@@ -1,0 +1,16 @@
+Mcrypt is a simple encryption program, intended to be replacement for the old 
+unix crypt(1). 
+
+Look at COPYING for license information and the individual files for more 
+information. COPYING applies only for the mcrypt program and not the 
+algorithms which most of them are public domain.
+
+A mailing list on mcrypt is mcrypt-dev@lists.hellug.gr
+Subscribe by visiting http://lists.hellug.gr/mailman/listinfo/mcrypt-dev
+
+The 2.6.x version of mcrypt can be compiled against libmcrypt 2.4.x 
+and libmcrypt 2.5.x.
+
+Updated versions of mcrypt and libmcrypt can be found at: 
+http://mcrypt.hellug.gr
+

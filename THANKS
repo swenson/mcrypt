@@ -1,0 +1,29 @@
+mcrypt and libmcrypt was originaly created by Nikos Mavroyanopoulos <nmav@hellug.gr>,
+although many people contributed by sending bug reports, patches, and comments.
+
+- Sascha Schumann <sascha@schumann.cx> 
+- Steve Underwood <steveu@infowebtelecom.com> 
+- Igor Schein <igor@txc.com>
+- Alexander Demenshin <aldem@techie.com>
+- Koblinger Egmont <egmont@fazekas.hu>
+- Larry Snyder <larrys@lexis-nexis.com>
+- Robin Humble <rjh@pixel.maths.monash.edu.au>
+- Janusz A. Urbanowicz <alex@bofh.net.pl>
+- Dan Stromberg <strombrg@nis.acs.uci.edu>
+- R Sriram <rsriram@krdl.org.sg>
+- Robert Hanzlik <robi@junyks.cz>
+- Lars Nordentoft <lntech@post9.tele.dk>
+- Don Sutherland <dss@yadda.net>
+- Salvatore Sanfilippo <antirez@linuxcare.com>
+- Jerome Bertorelle <jerome.bertorelle@noos.fr>
+- Andrew Libby <alibby@commnav.com>
+- Jonathan Woolmington <jwool@ind.tansu.com.au>
+- Sami Farin <sfarin@ratol.fi>
+- Barton C Massey <bart@cs.pdx.edu>
+- Timo Schulz <ts@winpt.org>
+- Petr Bláha <pblaha@suse.cz>
+- Ariel Fermani <the_end@bbs.frc.utn.edu.ar>
+- Keven Belanger <kbelanger@logicon.ca>
+
+- [and several others]
+

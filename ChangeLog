@@ -1,0 +1,753 @@
+2007-06-09  gettextize  <bug-gnu-gettext@gnu.org>
+
+	* m4/gettext.m4: New file, from gettext-0.16.1.
+	* m4/iconv.m4: New file, from gettext-0.16.1.
+	* m4/lib-ld.m4: New file, from gettext-0.16.1.
+	* m4/lib-link.m4: New file, from gettext-0.16.1.
+	* m4/lib-prefix.m4: New file, from gettext-0.16.1.
+	* m4/nls.m4: New file, from gettext-0.16.1.
+	* m4/po.m4: New file, from gettext-0.16.1.
+	* m4/progtest.m4: New file, from gettext-0.16.1.
+
+2003-03-08 17:38  nmav
+
+	* Makefile.am:
+
+	Honor DESTDIR variable. Patch by Andrew W. Nosenko  <awn@bcs.zp.ua> 
+
+2003-03-08 17:29  nmav
+
+	* src/mcrypt.c, NEWS:
+
+	Made the algorithm and mode command line input case insensitive.  
+
+2003-03-08 17:08  nmav
+
+	* doc/mcrypt.1:
+
+	some corrections in the manpage by  Michael Mason
+	<mgm@eskimoman.net> 
+
+2003-02-21 17:57  nmav
+
+	* NEWS (tags: mcrypt_2_6_4), buildconf (tags: mcrypt_2_6_4),
+	configure.in (tags: mcrypt_2_6_4), po/ChangeLog (tags:
+	mcrypt_2_6_4), po/Makevars (tags: mcrypt_2_6_4), po/cs.po (tags:
+	mcrypt_2_6_4), po/de.po (tags: mcrypt_2_6_4), po/el.po, po/es_AR.po
+	(tags: mcrypt_2_6_4), po/mcrypt.pot (tags: mcrypt_2_6_4), po/pl.po
+	(tags: mcrypt_2_6_4), src/Makefile.am (tags: mcrypt_2_6_4),
+	src/classic.c (tags: mcrypt_2_6_4), src/defines.h (tags:
+	mcrypt_2_6_4), src/extra.c (tags: mcrypt_2_6_4), src/gettext.h
+	(tags: mcrypt_2_6_4), src/rfc2440.c (tags: mcrypt_2_6_4):
+
+	changes for the 2.6.4 release.  
+
+2003-01-20 14:23  nmav
+
+	* NEWS, src/Makefile.am:
+
+	Some fixes to allow compiling gaaout.c with external CFLAGS and
+	CPPFLAGS.  
+
+2003-01-19 18:18  nmav
+
+	* configure.in:
+
+	search for bzip/gzip when not in win32.  
+
+2003-01-19 18:10  nmav
+
+	* ChangeLog, Makefile.am (tags: mcrypt_2_6_4), buildconf,
+	configure.in, po/ChangeLog, src/Makefile.am:
+
+	changes for new gettext.  
+
+2003-01-19 18:06  nmav
+
+	* configure.in, po/Makefile.in.in (tags: mcrypt_2_6_4),
+	src/classic.c, src/defines.h, src/rndwin32.c (tags: mcrypt_2_6_4):
+
+	Fixes for compiling under win32.  
+
+2002-12-30 15:06  nmav
+
+	* src/crypt (tags: mcrypt_2_6_4):
+
+	redirect errors to stderr 
+
+2002-12-18 11:37  nmav
+
+	* src/mcrypt.c (tags: mcrypt_2_6_4):
+
+	Print the version of the libmcrypt linked with, not the one compiled
+	with.  
+
+2002-10-06 20:43  nmav
+
+	* NEWS, po/es_AR.po:
+
+	New spanish (AR) translation by Ariel Fermani.  
+
+2002-10-04 09:09  nmav
+
+	* src/defines.h (tags: mcrypt_2_6_3):
+
+	added support for large files in gnu libc.  
+
+2002-10-02 07:26  nmav
+
+	* NEWS (tags: mcrypt_2_6_3), configure.in (tags: mcrypt_2_6_3),
+	src/defines.h, src/extra.c (tags: mcrypt_2_6_3), src/extra.h (tags:
+	mcrypt_2_6_4, mcrypt_2_6_3), src/rfc2440.c (tags: mcrypt_2_6_3):
+
+	Added support for stat64, lstat64 and the appropriate structures.  
+
+2002-10-01 11:14  nmav
+
+	* acconfig.h, acinclude.m4 (tags: mcrypt_2_6_4, mcrypt_2_6_3),
+	buildconf (tags: mcrypt_2_6_3), configure.in, libmcrypt.m4 (tags:
+	mcrypt_2_6_4, mcrypt_2_6_3), src/classic.c (tags: mcrypt_2_6_3),
+	src/defines.h, src/extra.c, src/rfc2440.c:
+
+	Added large file support, based on patch by Keven Belanger
+	<kbelanger@logicon.ca> 
+
+2002-06-26 08:40  twoaday
+
+	* src/mcrypt.c (tags: mcrypt_2_6_3):
+
+	Check that the compression level is not more than 9.  
+
+2002-06-22 08:07  nmav
+
+	* ABOUT-NLS (tags: mcrypt_2_6_3, mcrypt_2_6_2), po/ChangeLog (tags:
+	mcrypt_2_6_3, mcrypt_2_6_2), po/el.po, po/mcrypt.pot, src/mcrypt.c
+	(tags: mcrypt_2_6_2), src/rfc2440.c (tags: mcrypt_2_6_2):
+
+	Updated translations and gettext.  
+
+2002-06-18 17:58  twoaday
+
+	* po/de.po:
+
+	First update for the German .po file.  
+
+2002-06-18 15:55  nmav
+
+	* configure.in, po/POTFILES.in (tags: mcrypt_2_6_4, mcrypt_2_6_3,
+	mcrypt_2_6_2), po/es_AR.po:
+
+	Added Spanish-Argentina translation. Translation made by "Ariel
+	Fermani" <the_end@bbs.frc.utn.edu.ar>.  
+
+2002-06-15 10:13  nmav
+
+	* NEWS (tags: mcrypt_0_6_1), po/cs.po (tags: mcrypt_0_6_1),
+	po/de.po (tags: mcrypt_0_6_1), po/el.po (tags: mcrypt_0_6_1),
+	po/mcrypt.pot (tags: mcrypt_0_6_1), po/pl.po (tags: mcrypt_0_6_1),
+	src/classic.c:
+
+	last minute changes for release 
+
+2002-06-10 19:23  nmav
+
+	* src/: random.c, rndunix.c (utags: mcrypt_2_6_2, mcrypt_2_6_4,
+	mcrypt_0_6_1, mcrypt_2_6_3):
+
+	More changes to the rndunix, and the random number generator.  
+
+2002-06-10 18:36  nmav
+
+	* src/classic.c:
+
+	fixed IV detection 
+
+2002-06-09 19:02  nmav
+
+	* NEWS, src/classic.c, src/extra.c (tags: mcrypt_2_6_2,
+	mcrypt_0_6_1):
+
+	corrected bugs in bare mode. IV is not stored any more if the mode
+	does not support IV.  
+
+2002-06-09 08:53  nmav
+
+	* configure.in (tags: mcrypt_0_6_1):
+
+	cleaned up configure.in.  
+
+2002-06-07 17:32  nmav
+
+	* src/: mcrypt.c, random.c, random.h (tags: mcrypt_2_6_4,
+	mcrypt_2_6_3, mcrypt_2_6_2, mcrypt_0_6_1), rndunix.c, rndwin32.c
+	(tags: mcrypt_2_6_3, mcrypt_2_6_2, mcrypt_0_6_1):
+
+	rndunix is now used in a more appropriate way.  
+
+2002-06-07 15:24  nmav
+
+	* src/rndwin32.c:
+
+	oooops. Something was missing. Added missing header includes.  
+
+2002-06-07 15:11  nmav
+
+	* src/: Makefile.am, classic.c, defines.h (tags: mcrypt_2_6_2,
+	mcrypt_0_6_1), gaaout.c, keys.c (tags: mcrypt_2_6_2, mcrypt_0_6_1),
+	mcrypt.c, random.c, random.h, rndunix.c, rndwin32.c:
+
+	Added random byte generators for unix systems without /dev/random,
+	and win32 machines.  
+
+2002-05-31 21:28  nmav
+
+	* src/gaaout.c:
+
+	corrected buffer overrun in gaaout.c 
+
+2002-05-30 08:53  nmav
+
+	* src/rfc2440.c:
+
+	better error checking 
+
+2002-05-29 18:17  nmav
+
+	* src/classic.c:
+
+	If mhash initialization fails then prints an error message, instead
+	of crashing.  
+
+2002-05-29 15:52  twoaday
+
+	* src/rfc2440.c:
+
+	Some minor (final) changes.  
+
+2002-05-29 11:07  nmav
+
+	* NEWS, po/el.po, po/mcrypt.pot, src/classic.c (tags:
+	mcrypt_2_6_0), src/errors.c (tags: mcrypt_2_6_4, mcrypt_2_6_3,
+	mcrypt_2_6_2, mcrypt_0_6_1, mcrypt_2_6_0), src/extra.c (tags:
+	mcrypt_2_6_0), src/getpass.c (tags: mcrypt_2_6_4, mcrypt_2_6_3,
+	mcrypt_2_6_2, mcrypt_0_6_1, mcrypt_2_6_0), src/rfc2440.c (tags:
+	mcrypt_2_6_0):
+
+	updated getpass 
+
+2002-05-28 22:22  twoaday
+
+	* src/rfc2440.c:
+
+	Improved decryption code (much better to read) and support for
+	pipes.  
+
+2002-05-28 21:32  nmav
+
+	* src/: errors.c, errors.h (tags: mcrypt_2_6_4, mcrypt_2_6_3,
+	mcrypt_2_6_2, mcrypt_0_6_1, mcrypt_2_6_0):
+
+	added err_info() 
+
+2002-05-28 19:52  twoaday
+
+	* src/: rfc2440.c, rfc2440.h (tags: mcrypt_2_6_4, mcrypt_2_6_3,
+	mcrypt_2_6_2, mcrypt_0_6_1, mcrypt_2_6_0):
+
+	Changed a lot of internal code. Bug fix for the partial body
+	packets. Now we can read all GPG packets without any problems.  
+
+2002-05-28 10:33  nmav
+
+	* src/rfc2440.c:
+
+	corrected total processed bytes calculations.  
+
+2002-05-28 10:26  twoaday
+
+	* src/rfc2440.c:
+
+	Minor changes.  
+
+2002-05-27 20:18  twoaday
+
+	* src/: defines.h (tags: mcrypt_2_6_0), rfc2440.c:
+
+	Applied the patch for detecting wrong algorithms.  
+
+2002-05-26 21:21  twoaday
+
+	* src/: rfc2440.c, rfc2440.h:
+
+	Add enumerations to make the code more readable and some minor
+	cleanups.  
+
+2002-05-26 19:15  twoaday
+
+	* src/rfc2440.c:
+
+	Fixed the timing support for in-place routines.  
+
+2002-05-26 19:03  twoaday
+
+	* src/: rfc2440.c, rfc2440.h:
+
+	Applied the patches to use the timing for OpenPGP. Some bug fixes
+	all over the place and all unused code was removed.  
+
+2002-05-26 18:15  nmav
+
+	* src/: classic.c, openpgp.c (tags: mcrypt_2_6_4, mcrypt_2_6_3,
+	mcrypt_2_6_2, mcrypt_0_6_1, mcrypt_2_6_0):
+
+	Added ripemd to the list of support s2k algorithms.  
+
+2002-05-26 10:51  twoaday
+
+	* src/rfc2440.c:
+
+	Removed debug code and corrected the decryption code.  
+
+2002-05-26 10:26  nmav
+
+	* src/: gaa.h, gaaout.c, mcrypt.c (tags: mcrypt_2_6_0), mcrypt.gaa:
+
+	Added --openpgp-z option 
+
+2002-05-26 09:08  nmav
+
+	* src/: classic.c, extra.c, extra.h (tags: mcrypt_2_6_2,
+	mcrypt_0_6_1, mcrypt_2_6_0), mcrypt.c:
+
+	Several clean ups. Moved the timer functions to extra.c.  
+
+2002-05-25 21:08  twoaday
+
+	* src/rfc2440.c:
+
+	Use dynamic buffers for compression. This fixes an segfault and make
+	the decompression more robust.  
+
+2002-05-25 20:19  nmav
+
+	* src/: gaaout.c, mcrypt.gaa:
+
+	corrected argument parser.  
+
+2002-05-25 20:07  nmav
+
+	* src/mcrypt.c:
+
+	Added capability to remove gpg's encrypted file suffix.  
+
+2002-05-25 19:50  twoaday
+
+	* src/rfc2440.c:
+
+	Applied the second patch and some minor adjustments.  
+
+2002-05-25 19:45  nmav
+
+	* src/: gaaout.c, keys.c, keys.h (tags: mcrypt_2_6_4, mcrypt_2_6_3,
+	mcrypt_2_6_2, mcrypt_0_6_1, mcrypt_2_6_0), mcrypt.gaa:
+
+	Several GAA fixes.  
+
+2002-05-25 17:59  twoaday
+
+	* src/rfc2440.c:
+
+	More fixes for a safer allocation size.  
+
+2002-05-25 17:35  twoaday
+
+	* src/rfc2440.c:
+
+	Applied the patch (warning: now AES256 it the default!).  And fixed
+	the allocation size of some USTRING structs.  
+
+2002-05-25 17:01  nmav
+
+	* src/: mcrypt.c, xmalloc.c (tags: mcrypt_2_6_4, mcrypt_2_6_3,
+	mcrypt_2_6_2, mcrypt_0_6_1, mcrypt_2_6_0), xmalloc.h (tags:
+	mcrypt_2_6_4, mcrypt_2_6_3, mcrypt_2_6_2, mcrypt_0_6_1,
+	mcrypt_2_6_0):
+
+	Added mcrypt_strdup(). Outfile is set to null, if streams.  
+
+2002-05-25 12:19  nmav
+
+	* src/: Makefile.am (tags: mcrypt_2_6_0), gaa.h, gaaout.c,
+	mcrypt.c, mcrypt.gaa:
+
+	Moved several help stuff to mcrypt.gaa.  
+
+2002-05-25 11:36  twoaday
+
+	* src/: rfc2440.c, rfc2440.h:
+
+	Removed some debug code and made the code more robust.  
+
+2002-05-25 10:29  twoaday
+
+	* src/rfc2440.c:
+
+	Only use OpenPGP compatible key sizes.  
+
+2002-05-25 10:16  twoaday
+
+	* src/rfc2440.c:
+
+	Support for the globally chosen algorithm. And a check to make sure
+	we only use OpenPGP ciphers.  
+
+2002-05-24 19:24  nmav
+
+	* configure.in, src/Makefile.am, src/classic.c, src/extra.c,
+	src/locks.c, src/locks.h, src/mcrypt.c, src/mcrypt.gaa:
+
+	Removed all types of lockings in mcrypt.  
+
+2002-05-24 19:14  nmav
+
+	* configure.in, src/classic.c, src/defines.h, src/extra.c,
+	src/extra.h, src/mcrypt.c, src/openpgp.c, src/random.c (tags:
+	mcrypt_2_6_0):
+
+	More clean ups for OpenPGP 
+
+2002-05-24 18:39  nmav
+
+	* src/: classic.c, extra.c, extra.h, mcrypt.c:
+
+	Added file type detection code.  
+
+2002-05-24 18:06  nmav
+
+	* src/rfc2440.c:
+
+	uses the mcrypt random functions.  
+
+2002-05-24 18:04  nmav
+
+	* src/: classic.c, defines.h, gaaout.c, getpass.c, mcrypt.gaa,
+	random.c, random.h (tags: mcrypt_2_6_0):
+
+	Cleanups. Better random functions.  
+
+2002-05-24 17:03  nmav
+
+	* configure.in:
+
+	Added mhash 0.8.15 test 
+
+2002-05-24 16:27  twoaday
+
+	* src/rfc2440.c:
+
+	Minor bug fix and support for streams (encryption).  
+
+2002-05-24 15:19  nmav
+
+	* src/: Makefile.am, extra.c, extra.h, gaa.h, gaaout.c, getpass.c,
+	keys.c, mcrypt.c, mcrypt.gaa, openpgp.c, openpgp.h (tags:
+	mcrypt_2_6_4, mcrypt_2_6_3, mcrypt_2_6_2, mcrypt_0_6_1,
+	mcrypt_2_6_0), rfc2440.c:
+
+	Cleanups. Added option for openpgp files.  
+
+2002-05-24 13:25  twoaday
+
+	* src/: rfc2440.c, rfc2440.h:
+
+	Basic OpenPGP support.  
+
+2002-05-11 08:15  nmav
+
+	* configure.in, po/de.po:
+
+	Added German translation by Timo Schulz.  
+
+2002-05-05 17:46  nmav
+
+	* src/crypt (tags: mcrypt_2_6_0):
+
+	updated crypt script to be more sophisticated 
+
+2002-03-23 15:05  nmav
+
+	* src/gaaout.c:
+
+	compiled with gaa 1.6.0 
+
+2002-03-11 09:55  nmav
+
+	* ChangeLog, Makefile.am (tags: mcrypt_2_6_0), NEWS:
+
+	last changes for 2.5.13 release 
+
+2002-03-10 00:19  nmav
+
+	* configure.in:
+
+	depends on libmcrypt 2.4.23 
+
+2002-03-09 10:43  nmav
+
+	* src/classic.c:
+
+	Block ciphers in stream modes, are now treated as stream ciphers.  
+
+2002-03-07 12:27  nmav
+
+	* src/: Makefile.am, gaa.h, gaaout.c:
+
+	gaa fixes 
+
+2002-03-07 12:24  nmav
+
+	* src/: Makefile.am, classic.c, gaaout.c, mcrypt.c:
+
+	Moved encryption code to classic.c, and several cleanups 
+
+2002-03-02 23:35  nmav
+
+	* src/mcrypt.c:
+
+	Added checks in all fwrite() calls.  
+
+2002-01-26 09:09  nmav
+
+	* NEWS, THANKS (tags: mcrypt_2_5_12, mcrypt_2_5_11), po/cs.po
+	(tags: mcrypt_2_5_12, mcrypt_2_5_11), po/el.po (tags:
+	mcrypt_2_5_12, mcrypt_2_5_11), po/mcrypt.pot (tags: mcrypt_2_5_12,
+	mcrypt_2_5_11), po/pl.po (tags: mcrypt_2_5_12, mcrypt_2_5_11),
+	src/defines.h (tags: mcrypt_2_5_12, mcrypt_2_5_11), src/mcrypt.c
+	(tags: mcrypt_2_5_12, mcrypt_2_5_11):
+
+	last changes for 2.5.11 release 
+
+2002-01-19 09:47  nmav
+
+	* acinclude.m4 (tags: mcrypt_0_6_1, mcrypt_2_6_0), configure.in
+	(utags: mcrypt_2_5_11, mcrypt_2_5_12):
+
+	updated so they do not require libmcrypt.m4 
+
+2001-12-01 08:56  nmav
+
+	* NEWS, doc/mcrypt.1 (tags: mcrypt_2_5_12, mcrypt_2_5_11),
+	src/mcrypt.c:
+
+	final fixes for --time option 
+
+2001-11-12 21:58  nmav
+
+	* configure.in, doc/mcrypt.1, po/cs.po, po/el.po, po/mcrypt.pot,
+	po/pl.po, src/gaa.h (tags: mcrypt_2_5_12, mcrypt_2_5_11),
+	src/gaaout.c, src/mcrypt.c, src/mcrypt.gaa:
+
+	added option to print timing information 
+
+2001-09-24 14:11  nmav
+
+	* NEWS, configure.in, po/cs.po, po/el.po, po/mcrypt.pot, po/pl.po,
+	src/mcrypt.c (utags: mcrypt_2_5_10):
+
+	corrected bug in key size checking 
+
+2001-09-18 10:26  nmav
+
+	* README (tags: mcrypt_2_6_0, mcrypt_2_5_12, mcrypt_2_5_11,
+	mcrypt_2_5_10, mcrypt_2_5_9b):
+
+	updated 
+
+2001-09-16 18:16  nmav
+
+	* NEWS (tags: mcrypt_2_5_9b), configure.in (tags: mcrypt_2_5_9b),
+	po/cs.po (tags: mcrypt_2_5_9b), po/el.po (tags: mcrypt_2_5_9b),
+	po/mcrypt.pot (tags: mcrypt_2_5_9b), po/pl.po (tags:
+	mcrypt_2_5_9b), src/Makefile.am, src/defines.h (tags:
+	mcrypt_2_5_10, mcrypt_2_5_9b), src/extra.c (tags: mcrypt_2_5_12,
+	mcrypt_2_5_11, mcrypt_2_5_10, mcrypt_2_5_9b), src/getpass.c (tags:
+	mcrypt_2_5_12, mcrypt_2_5_11, mcrypt_2_5_10, mcrypt_2_5_9b),
+	src/getpass.h (tags: mcrypt_2_6_4, mcrypt_2_6_3, mcrypt_2_6_2,
+	mcrypt_0_6_1, mcrypt_2_6_0, mcrypt_2_5_12, mcrypt_2_5_11,
+	mcrypt_2_5_10, mcrypt_2_5_9b), src/xmalloc.h (tags: mcrypt_2_5_12,
+	mcrypt_2_5_11, mcrypt_2_5_10, mcrypt_2_5_9b) (utags: mcrypt_2_5_9):
+
+	several cleanups 
+
+2001-09-15 09:41  nmav
+
+	* NEWS, THANKS (tags: mcrypt_2_5_10, mcrypt_2_5_9b, mcrypt_2_5_9),
+	po/cs.po, po/el.po, po/mcrypt.pot, po/pl.po, src/extra.c,
+	src/mcrypt.c (tags: mcrypt_2_5_9b, mcrypt_2_5_9):
+
+	corrected bug 
+
+2001-09-08 18:16  nmav
+
+	* NEWS, configure.in (tags: mcrypt_2_5_8), po/el.po, po/mcrypt.pot,
+	src/defines.h (tags: mcrypt_2_5_8), src/extra.c, src/mcrypt.c,
+	src/popen.c (tags: mcrypt_2_5_12, mcrypt_2_5_11, mcrypt_2_5_10,
+	mcrypt_2_5_9b, mcrypt_2_5_9, mcrypt_2_5_8):
+
+	removed libmcrypt2.2 support.  some other fixes.  
+
+2001-09-08 10:26  nmav
+
+	* NEWS, src/Makefile.am, src/extra.c, src/mcrypt.c, src/popen.c,
+	src/ufc_crypt.c (tags: mcrypt_2_6_4, mcrypt_2_6_3, mcrypt_2_6_2,
+	mcrypt_0_6_1, mcrypt_2_6_0, mcrypt_2_5_12, mcrypt_2_5_11,
+	mcrypt_2_5_10, mcrypt_2_5_9b, mcrypt_2_5_9, mcrypt_2_5_8),
+	src/xmalloc.c (tags: mcrypt_2_5_12, mcrypt_2_5_11, mcrypt_2_5_10,
+	mcrypt_2_5_9b, mcrypt_2_5_9, mcrypt_2_5_8):
+
+	--gzip and --bzip2 flags work even when handling streams.  Several
+	other fixes.  
+
+2001-09-02 20:20  nmav
+
+	* NEWS, THANKS (tags: mcrypt_2_5_8), acinclude.m4, buildconf (tags:
+	mcrypt_2_6_2, mcrypt_0_6_1, mcrypt_2_6_0, mcrypt_2_5_12,
+	mcrypt_2_5_11, mcrypt_2_5_10, mcrypt_2_5_9b, mcrypt_2_5_9,
+	mcrypt_2_5_8), configure.in, po/cat-id-tbl.c (tags: mcrypt_2_6_4,
+	mcrypt_2_6_3, mcrypt_2_6_2, mcrypt_0_6_1, mcrypt_2_6_0,
+	mcrypt_2_5_12, mcrypt_2_5_11, mcrypt_2_5_10, mcrypt_2_5_9b,
+	mcrypt_2_5_9, mcrypt_2_5_8), po/mcrypt.pot, src/Makefile.am,
+	src/defines.h, src/environ.c (tags: mcrypt_2_6_4, mcrypt_2_6_3,
+	mcrypt_2_6_2, mcrypt_0_6_1, mcrypt_2_6_0, mcrypt_2_5_12,
+	mcrypt_2_5_11, mcrypt_2_5_10, mcrypt_2_5_9b, mcrypt_2_5_9,
+	mcrypt_2_5_8), src/extra.c, src/gaaout.c, src/getpass.c (tags:
+	mcrypt_2_5_8), src/keys.c (tags: mcrypt_2_5_12, mcrypt_2_5_11,
+	mcrypt_2_5_10, mcrypt_2_5_9b, mcrypt_2_5_9, mcrypt_2_5_8),
+	src/mcrypt.c, src/xmalloc.c, src/xmalloc.h (tags: mcrypt_2_5_8):
+
+	added option to statically link mcrypt... and other fixes 
+
+2001-06-16 07:39  nmav
+
+	* src/extra.c:
+
+	replaced _tolower with tolower() 
+
+2001-06-04 14:40  nmav
+
+	* ChangeLog, NEWS, acconfig.h, configure.in, po/.cvsignore (tags:
+	mcrypt_2_6_4, mcrypt_2_6_3, mcrypt_2_6_2, mcrypt_0_6_1,
+	mcrypt_2_6_0, mcrypt_2_5_12, mcrypt_2_5_11, mcrypt_2_5_10,
+	mcrypt_2_5_9b, mcrypt_2_5_9, mcrypt_2_5_8), po/cat-id-tbl.c,
+	po/el.po, po/mcrypt.pot, src/extra.c, src/gaa.h (tags:
+	mcrypt_2_5_10, mcrypt_2_5_9b, mcrypt_2_5_9, mcrypt_2_5_8),
+	src/gaaout.c, src/getpass.c, src/keys.c, src/mcrypt.c,
+	src/mcrypt.gaa (tags: mcrypt_2_5_10, mcrypt_2_5_9b, mcrypt_2_5_9,
+	mcrypt_2_5_8) (utags: mcrypt_2_5_7):
+
+	several fixes 
+
+2001-04-27 11:45  nmav
+
+	* po/cs.po (tags: mcrypt_2_5_7):
+
+	updated czech locales 
+
+2000-12-17 13:20  nmav
+
+	* src/: popen.c, popen.h (tags: mcrypt_2_5_9b, mcrypt_2_5_9,
+	mcrypt_2_5_8) (utags: mcrypt_2_5_7):
+
+	added popen.c/popen.h a wrapper for popen 
+
+2000-12-17 13:14  nmav
+
+	* src/mcrypt.c, doc/mcrypt.1:
+
+	removed -h from help option 
+
+2000-11-01 18:34  nmav
+
+	* src/extra.c:
+
+	added an #ifdef for SIGSEGV 
+
+2000-10-25 17:21  nmav
+
+	* po/el.po:
+
+	Corrected greek translation 
+
+2000-10-25 17:18  nmav
+
+	* po/: cs.po, cz.po, el.po, mcrypt.pot:
+
+	Corrected Czech locales 
+
+2000-10-07 18:31  nmav
+
+	* doc/algorithm_comparison.txt (tags: mcrypt_2_6_4, mcrypt_2_6_3,
+	mcrypt_2_6_2, mcrypt_0_6_1, mcrypt_2_6_0, mcrypt_2_5_12,
+	mcrypt_2_5_11, mcrypt_2_5_10, mcrypt_2_5_9b, mcrypt_2_5_9,
+	mcrypt_2_5_8, mcrypt_2_5_7):
+
+	added text file with a speed comparison beetween some algorithms 
+
+2000-10-05 17:24  nmav
+
+	* src/defines.h (tags: mcrypt_2_5_7):
+
+	Rijndael-128 (AES winner) is the default algorithm used 
+
+2000-10-03 14:50  nmav
+
+	* doc/mcrypt.1:
+
+	added AES next to RIJNDAEL-128 
+
+2000-09-28 19:16  nmav
+
+	* configure.in, src/defines.h, src/extra.c:
+
+	added a preliminary strlcpy support (if it exists on the system...
+	otherwise an kludge emulation function is provider) 
+
+2000-09-28 12:03  nmav
+
+	* po/cat-id-tbl.c, po/mcrypt.pot, src/mcrypt.c:
+
+	corrected bugs which made mcrypt unusable. (some stale return 1,
+	were removed) 
+
+2000-09-27 13:34  nmav
+
+	* configure.in:
+
+	added support for libmcrypt compiled with libdl 
+
+2000-05-26 21:58  nmav
+
+	* THANKS (tags: mcrypt_2_5_7), src/mcrypt.c:
+
+	mcrypt now outputs an error message, if it cannot lock files.
+	Pointed out by Salvatore Sanfilippo <antirez@linuxcare.com> 
+
+2000-05-22 13:07  nmav
+
+	* ABOUT-NLS, AUTHORS, COPYING, ChangeLog, INSTALL, INSTALL.generic,
+	LSM, Makefile.am, NEWS, README, THANKS, TODO, acconfig.h,
+	buildconf, changelog-update.sh, configure.in, doc/FORMAT,
+	doc/Makefile.am, doc/README-ufc-crypt, doc/magic, doc/mcrypt.1,
+	doc/sample.mcryptrc, po/ChangeLog, po/Makefile.in.in,
+	po/POTFILES.in, po/cat-id-tbl.c, po/cz.po, po/el.po, po/mcrypt.pot,
+	po/pl.po, src/Makefile.am, src/bits.c, src/bits.h, src/crypt,
+	src/defines.h, src/environ.c, src/environ.h, src/errors.c,
+	src/errors.h, src/extra.c, src/extra.h, src/functions.c,
+	src/functions.h, src/mcrypt_int.h, src/gaa.h, src/gaaout.c,
+	src/getpass.c, src/getpass.h, src/keys.c, src/keys.h, src/locks.c,
+	src/locks.h, src/mcrypt.c, src/mcrypt.gaa, src/random.c,
+	src/random.h, src/xmalloc.c, src/xmalloc.h, src/ufc_crypt.c,
+	src/ufc_crypt.h, src/logfile:
+
+	Initial revision 
+

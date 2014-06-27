@@ -1,0 +1,24 @@
+The output file for all the algorithms (except unix crypt) when not used in
+bare mode is:
+
+3 bytes as: NULL + "m" + \3
+One byte flag:
+	In that version everything is null except the 7th bit which
+	should be set if the key generator uses a salt.
+	The 8th bit should be set if an IV is being used.
+The algorithm's name, null terminated (eg. blowfish)
+Two bytes the key length. (in little endian format)
+The algorithm's mode name, null terminated. (eg. cbc)
+The key generator's name, null terminated. (eg. mcrypt-sha1)
+If the 7th bit of the flag is set:
+	One byte flag:
+		The size of the salt, following that byte, 
+		and it's first bit is set.
+	The salt follows.
+The algorithm used to compute the checksum stored at the end of file (eg. crc32), 
+	also null terminated.
+If the 8th bit of the flag is set:
+	The IV (depending on the algorithm)
+[...encrypted data...]
+A checksum (eg. crc32) of the original data (encrypted). The checksum is 
+appended to the end of the file to be encrypted.

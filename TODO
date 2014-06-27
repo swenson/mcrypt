@@ -1,0 +1,2 @@
+- Make mcrypt 2.5 read the 2.2 file format
+- Include the modification time in the encrypted file.

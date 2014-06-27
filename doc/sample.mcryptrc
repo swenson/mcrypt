@@ -1,0 +1,6 @@
+algorithm gost
+mode cbc
+keyfile /home/me/myfile
+random
+unlink
+keymode mcrypt-sha1

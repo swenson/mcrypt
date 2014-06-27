@@ -1,0 +1,921 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# created by  Robert Hanzlík <robi@junyks.cz>\n"
+# modified  Petr Bláha <pblaha@suse.cz>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: mcrypt 2.5.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-11-16 22:09+0200\n"
+"PO-Revision-Date:  2000-10-12 12:12+0200\n"
+"Last-Translator: Petr Bláha <pblaha@suse.cz>\n"
+"Language-Team: Czech <cs@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-2\n"
+"Content-Transfer-Encoding: 8-bit\n"
+
+#: src/extra.c:99
+#, c-format
+msgid "Keywords do not match or they are too long.\n"
+msgstr "Klíèová slova nesouhlasí a nebo jsou moc dlouhá.\n"
+
+#: src/extra.c:114
+#, c-format
+msgid "Enter passphrase: "
+msgstr "Zadejte klíèovací frázi: "
+
+#: src/extra.c:119
+#, c-format
+msgid "Enter the passphrase (maximum of %d characters)\n"
+msgstr "Zadejte klíèovací frázi (maximum je %d znakù)\n"
+
+#: src/extra.c:123
+#, c-format
+msgid "Please use a combination of upper and lower case letters and numbers.\n"
+msgstr "Pou¾ijte prosím kombinaci velkých, malých písmen a èísel.\n"
+
+#: src/extra.c:190 src/extra.c:195 src/extra.c:200 src/extra.c:205
+#: src/extra.c:210 src/extra.c:215
+msgid "Unsupported version of encrypted file\n"
+msgstr "Nepodporovaná verze za¹ifrovaného souboru\n"
+
+#: src/extra.c:221
+msgid "No Initialization vector was used.\n"
+msgstr "Inicializaèní vektor nebyl pou¾it.\n"
+
+#: src/extra.c:261
+msgid ""
+"This is a file encrypted with the 2.2 version of mcrypt. Unfortunately "
+"you'll need that version to decrypt it.\n"
+msgstr ""
+"Toto je soubor za¹ifrovaný programem mcrypt verze 2.2Bohu¾el budete "
+"potøebovat toto verzi pro de¹ifrování.\n"
+
+#: src/extra.c:266
+msgid ""
+"This is a file encrypted with the 2.1 version of mcrypt. Unfortunately "
+"you'll need that version to decrypt it.\n"
+msgstr ""
+"Toto je soubor za¹ifrovaný programem mcrypt verze 2.1Bohu¾el budete "
+"potøebovat toto verzi pro de¹ifrování.\n"
+
+#: src/extra.c:270
+msgid ""
+"Unable to get algorithm information. Use the --bare flag and specify the "
+"algorithm manualy.\n"
+msgstr ""
+"Nemohu získat informaci o algoritmu. Pou¾ij pøíznak --bare a specifikuj "
+"algoritmus manuálnì.\n"
+
+#: src/extra.c:452
+#, c-format
+msgid "Signal %d caught. Exiting.\n"
+msgstr "Zachycen signál %d. Konèím.\n"
+
+#: src/extra.c:464
+#, c-format
+msgid ""
+"\n"
+"Signal %d caught. Exiting.\n"
+msgstr ""
+"\n"
+"Zachycen signál %d. Konèím.\n"
+
+#: src/extra.c:490
+#, c-format
+msgid "Keyfile could not be opened. Ignoring it.\n"
+msgstr "Nelze otevøít klíèový soubor. Ignoruji.\n"
+
+#: src/extra.c:553
+#, c-format
+msgid "%s: %s already exists; do you wish to overwrite (y or n)?"
+msgstr "%s: %s ji¾ existuje; pøepsat (y or n)?"
+
+#: src/extra.c:615
+msgid "Could not push character back to stream\n"
+msgstr ""
+
+#: src/extra.c:623
+#, fuzzy
+msgid "Could not open file\n"
+msgstr "Mcrypt nemù¾e otevøít modul.\n"
+
+#: src/extra.c:636
+msgid "An OpenPGP encrypted file has been detected.\n"
+msgstr ""
+
+#: src/extra.c:651
+#, c-format
+msgid ""
+"Algorithm: %s\n"
+"Keysize: %d\n"
+"Mode: %s\n"
+"Keyword mode: %s\n"
+msgstr ""
+"Algoritmus: %s\n"
+"Velikost klíèe: %d\n"
+"Mód: %s\n"
+"klíèovací mód: %s\n"
+
+#: src/extra.c:659
+#, c-format
+msgid "File format: %s\n"
+msgstr ""
+
+#: src/extra.c:664
+#, fuzzy, c-format
+msgid "Input File: %s\n"
+msgstr "Soubor:  %s\n"
+
+#: src/extra.c:667
+#, fuzzy, c-format
+msgid "Output File: %s\n"
+msgstr "Soubor:  %s\n"
+
+#: src/extra.c:712
+#, c-format
+msgid "Time needed: "
+msgstr ""
+
+#: src/extra.c:715
+#, c-format
+msgid "%lu hours"
+msgstr ""
+
+#: src/extra.c:722
+#, c-format
+msgid "%lu minutes"
+msgstr ""
+
+#: src/extra.c:729
+#, c-format
+msgid "%lu seconds"
+msgstr ""
+
+#: src/extra.c:736
+#, c-format
+msgid "%lu milliseconds"
+msgstr ""
+
+#: src/extra.c:741
+#, c-format
+msgid "Wow, no time counted!\n"
+msgstr ""
+
+#: src/extra.c:748
+#, c-format
+msgid ""
+"Processed %.3f MB, at a %.3f MB/sec rate (1 MB == 1000000 Bytes).\n"
+"\n"
+msgstr ""
+
+#: src/extra.c:755
+#, c-format
+msgid ""
+"Processed %.3f KB, at a %.3f KB/sec rate (1 KB == 1000 Bytes).\n"
+"\n"
+msgstr ""
+
+#: src/mcrypt.c:80
+#, c-format
+msgid ""
+"\n"
+"Report bugs to mcrypt-dev@lists.hellug.gr.\n"
+"\n"
+msgstr ""
+
+#: src/mcrypt.c:90
+#, c-format
+msgid ""
+"\n"
+"Copyright (C) 1998-2002 Nikos Mavroyanopoulos\n"
+"This program is free software; you can redistribute it and/or modify \n"
+"it under the terms of the GNU General Public License as published by \n"
+"the Free Software Foundation; either version 2 of the License, or \n"
+"(at your option) any later version. \n"
+"\n"
+"This program is distributed in the hope that it will be useful, \n"
+"but WITHOUT ANY WARRANTY; without even the implied warranty of \n"
+"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the \n"
+"GNU General Public License for more details. \n"
+"\n"
+"You should have received a copy of the GNU General Public License \n"
+"along with this program; if not, write to the Free Software \n"
+"Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.\n"
+"\n"
+msgstr ""
+
+#: src/mcrypt.c:133
+#, c-format
+msgid "Mcrypt v.%s (%s-%s-%s)\n"
+msgstr ""
+
+#: src/mcrypt.c:135
+#, c-format
+msgid "Linked against libmcrypt v.%s\n"
+msgstr "Slinkováno proti libmcrypt v.%s\n"
+
+#: src/mcrypt.c:139
+#, c-format
+msgid "Copyright (C) 1998-2002 Nikos Mavroyanopoulos (nmav@gnutls.org)\n"
+msgstr ""
+
+#: src/mcrypt.c:152
+msgid "The specified key size is too large for this algorithm.\n"
+msgstr "Urèená velikost klíèe je pøíli¹ dlouhá pro tento algoritmus.\n"
+
+#: src/mcrypt.c:177
+msgid "The specified key size not valid for this algorithm.\n"
+msgstr "Urèený klíè není platný pro tento algoritmus.\n"
+
+#: src/mcrypt.c:214 src/mcrypt.c:266
+#, fuzzy
+msgid "Error in the arguments. Use the --help parameter for more info.\n"
+msgstr ""
+"Pøesmìruj vstup.\n"
+"Pou¾ij parametr --help pro lep¹í vysvìtlení.\n"
+
+#: src/mcrypt.c:219
+msgid "Warning: Cannot access config file.\n"
+msgstr "Varování: Nemám pøístup ke konfiguraènímu souboru.\n"
+
+#: src/mcrypt.c:235
+#, fuzzy
+msgid ""
+"Error in the configuration file. Use the --help parameter for more info.\n"
+msgstr ""
+"Pøesmìruj vstup.\n"
+"Pou¾ij parametr --help pro lep¹í vysvìtlení.\n"
+
+#: src/mcrypt.c:336
+#, c-format
+msgid "The '%s' hash algorithm was not found.\n"
+msgstr "Ha¹ovací Algoritmus  '%s' nebyl nalezen.\n"
+
+#: src/mcrypt.c:339
+#, c-format
+msgid "Use the --hashlist parameter to view all supported hashes.\n"
+msgstr "Pou¾ij parametr --hashlist pro výpis podporových he¹ù.\n"
+
+#: src/mcrypt.c:379
+msgid "Illegal compression level\n"
+msgstr ""
+
+#: src/mcrypt.c:392
+#, c-format
+msgid "Error in algorithm '%s'.\n"
+msgstr "Chyba v algoritmu '%s'.\n"
+
+#: src/mcrypt.c:401 src/mcrypt.c:413
+#, c-format
+msgid "Error in mode '%s'.\n"
+msgstr "Chyba v módu  '%s'.\n"
+
+#: src/mcrypt.c:427
+msgid "Warning: It is insecure to specify keywords in the command line\n"
+msgstr ""
+"Varování: Není bezpeèné specifikovat klíèová slova na pøíkazové øádce\n"
+
+#: src/mcrypt.c:436
+msgid ""
+"Warning: This system does not have a random device. Will use the included "
+"entropy gatherer.\n"
+msgstr ""
+
+#: src/mcrypt.c:487
+#, c-format
+msgid "%s: %s is not a regular file. Skipping...\n"
+msgstr "%s: %s není regulérní soubor. Pøeskakuji...\n"
+
+#: src/mcrypt.c:506
+#, c-format
+msgid "%s: Encrypted data will not be read from a terminal.\n"
+msgstr "%s: Za¹ifrovaná data nebudou ètena z terminálu.\n"
+
+#: src/mcrypt.c:510
+msgid ""
+"Redirect the input instead.\n"
+"Use the --help parameter for more help.\n"
+msgstr ""
+"Pøesmìruj vstup.\n"
+"Pou¾ij parametr --help pro lep¹í vysvìtlení.\n"
+
+#: src/mcrypt.c:525
+#, c-format
+msgid "%s: Encrypted data will not be written to a terminal.\n"
+msgstr "%s: Za¹ifrovaná data nebudou zapsána na terminál.\n"
+
+#: src/mcrypt.c:529
+msgid ""
+"Redirect the output instead.\n"
+"Use the --help parameter for more help.\n"
+msgstr ""
+"Pøesmìruj vstup.\n"
+"Pou¾ij parametr --help pro lep¹í vysvìtlení.\n"
+
+#: src/mcrypt.c:549
+#, c-format
+msgid "%s: file %s has the .nc suffix... skipping...\n"
+msgstr "%s: soubor %s má pøíponu .nc  pøeskakuji...\n"
+
+#: src/mcrypt.c:593
+#, c-format
+msgid "File %s was decrypted.\n"
+msgstr "Soubor %s byl de¹ifrován.\n"
+
+#: src/mcrypt.c:596
+#, c-format
+msgid "Stdin was decrypted.\n"
+msgstr "Stdin (standartní vstup)  byl de¹ifrován\n"
+
+#: src/mcrypt.c:615
+#, c-format
+msgid "File %s was NOT decrypted successfully.\n"
+msgstr "Soubor %s NEBYL úspì¹nì de¹ifrován.\n"
+
+#: src/mcrypt.c:625
+msgid "Stdin was NOT decrypted successfully.\n"
+msgstr "Stdin (standartní vstup) NEBYL úspì¹nì de¹ifrován.\n"
+
+#: src/mcrypt.c:639
+#, c-format
+msgid "File %s was encrypted.\n"
+msgstr "Soubor %s byl za¹ifrován\n"
+
+#: src/mcrypt.c:642
+#, c-format
+msgid "Stdin was encrypted.\n"
+msgstr "Stdin (standartní vstup) byl za¹ifrován\n"
+
+#: src/mcrypt.c:660
+#, c-format
+msgid "File %s was NOT encrypted successfully.\n"
+msgstr "Soubor %s NEBYL úspì¹nì za¹ifrován.\n"
+
+#: src/mcrypt.c:670
+msgid "Stdin was NOT encrypted successfully.\n"
+msgstr "Stdin (standartní vstup) NEBYL úspì¹nì za¹ifrován.\n"
+
+#: src/mcrypt.c:732
+msgid "Unknown suffix. Will append '.dc'.\n"
+msgstr ""
+
+#: src/keys.c:133
+msgid "Key transformation failed.\n"
+msgstr "Transformace  klíèe selhala.\n"
+
+#: src/xmalloc.c:37 src/xmalloc.c:55 src/xmalloc.c:72 src/xmalloc.c:91
+#: src/xmalloc.c:107 src/xmalloc.c:124 src/xmalloc.c:146
+#, c-format
+msgid "Cannot allocate memory\n"
+msgstr "Nemohu alokovat pamì»\n"
+
+#: mcrypt.gaa:120
+#, fuzzy, c-format
+msgid ""
+"Mcrypt encrypts and decrypts files with symmetric encryption algorithms.\n"
+"Usage: mcrypt [-dFusgbhLvrzp] [-f keyfile] [-k key1 key2 ...] [-m mode] [-o "
+"keymode] [-s keysize] [-a algorithm] [-c config_file] [file ...]\n"
+"\n"
+msgstr ""
+"Pou¾ití: mcrypt [-dLFus87bhvrx] [-f klíèový_soubor] [-k klíè1 klíè2 ...] [-m "
+"mód] [-i bitový mód] [-a algoritmus] [-c konfiguraèní_soubor] [soubor  ...]\n"
+"\n"
+
+#: mcrypt.gaa:121
+msgid "Use the OpenPGP (RFC2440) file format."
+msgstr ""
+
+#: mcrypt.gaa:122
+msgid "Use the native (mcrypt) file format."
+msgstr ""
+
+#: mcrypt.gaa:123 mcrypt.gaa:125
+msgid "INTEGER "
+msgstr ""
+
+#: mcrypt.gaa:123
+msgid "Sets the compression level for openpgp packets (0 disables)."
+msgstr ""
+
+#: mcrypt.gaa:124
+msgid "decrypts."
+msgstr ""
+
+#: mcrypt.gaa:125
+msgid "Set the algorithm's key size (in bytes)."
+msgstr ""
+
+#: mcrypt.gaa:126
+msgid "KEYMODE "
+msgstr ""
+
+#: mcrypt.gaa:126
+#, fuzzy
+msgid ""
+"Specify the keyword mode. Use the --list-keymodes parameter to view all "
+"modes."
+msgstr "Pou¾ij parametr --hashlist pro výpis podporových he¹ù.\n"
+
+#: mcrypt.gaa:127 mcrypt.gaa:128
+msgid "FILE "
+msgstr ""
+
+#: mcrypt.gaa:127
+msgid "Specify the file to read the keyword from."
+msgstr ""
+
+#: mcrypt.gaa:128
+#, fuzzy
+msgid "Use configuration file FILE."
+msgstr "Chyba v konfiguraèním souboru.\n"
+
+#: mcrypt.gaa:129
+msgid "ALGORITHM "
+msgstr ""
+
+#: mcrypt.gaa:129
+msgid ""
+"Specify the encryption and decryption algorithm. Use the --list parameter to "
+"see the supported algorithms."
+msgstr ""
+
+#: mcrypt.gaa:130 mcrypt.gaa:132
+msgid "DIRECTORY "
+msgstr ""
+
+#: mcrypt.gaa:130
+msgid "Set the algorithms directory."
+msgstr ""
+
+#: mcrypt.gaa:131
+msgid "MODE "
+msgstr ""
+
+#: mcrypt.gaa:131
+msgid ""
+"Specify the encryption and decryption mode. Use the --list parameter to see "
+"the supported modes."
+msgstr ""
+
+#: mcrypt.gaa:132
+msgid "Set the modes directory."
+msgstr ""
+
+#: mcrypt.gaa:133
+msgid "HASH "
+msgstr ""
+
+#: mcrypt.gaa:133
+msgid ""
+"Specify the hash algorithm to be used. Use the --list-hash parameter to view "
+"the hash algorithms."
+msgstr ""
+
+#: mcrypt.gaa:134
+msgid "KEY1 KEY2...KEYN "
+msgstr ""
+
+#: mcrypt.gaa:134
+msgid "Specify the key(s)"
+msgstr ""
+
+#: mcrypt.gaa:135
+msgid "Do not use an IV."
+msgstr ""
+
+#: mcrypt.gaa:136
+msgid "Do not keep algorithm information in the encrypted file."
+msgstr ""
+
+#: mcrypt.gaa:137
+#, fuzzy
+msgid "Use gzip to compress files before encryption."
+msgstr ""
+" -z --gzip                    pou¾ij gzip na komprimaci souborù pøed\n"
+"                              za¹ifrováním.\n"
+
+#: mcrypt.gaa:138
+#, fuzzy
+msgid "Use bzip2 to compress files before encryption."
+msgstr ""
+" -p --bzip2                   pou¾ij bzip2 na komprimaci souborù pøed\n"
+"                              za¹ifrováním.\n"
+
+#: mcrypt.gaa:139
+msgid "Immediately flush the output"
+msgstr ""
+
+#: mcrypt.gaa:140
+msgid "Double check passwords."
+msgstr ""
+
+#: mcrypt.gaa:141
+msgid "Unlink the input file after encryption or decryption."
+msgstr ""
+
+#: mcrypt.gaa:142
+msgid "Do not delete the output file if decryption failed."
+msgstr ""
+
+#: mcrypt.gaa:143
+msgid "Prints timing information."
+msgstr ""
+
+#: mcrypt.gaa:144
+msgid "Forces output to stdout."
+msgstr ""
+
+#: mcrypt.gaa:145
+msgid "Echo asterisks when entering the password."
+msgstr ""
+
+#: mcrypt.gaa:146
+msgid "Use real random data (if your system supports it)."
+msgstr ""
+
+#: mcrypt.gaa:147
+#, fuzzy
+msgid "Prints a list of the supported algorithms and modes."
+msgstr "Mcrypt nemù¾e testovat algoritmy a módy.\n"
+
+#: mcrypt.gaa:148
+msgid "Prints a list of the supported key modes."
+msgstr ""
+
+#: mcrypt.gaa:149
+msgid "Prints a list of the supported hash algorithms."
+msgstr ""
+
+#: mcrypt.gaa:150
+#, fuzzy
+msgid "More information is displayed."
+msgstr "Transformace  klíèe selhala.\n"
+
+#: mcrypt.gaa:151
+msgid "Suppress some non critical warnings."
+msgstr ""
+
+#: mcrypt.gaa:152
+msgid "Prints this help"
+msgstr ""
+
+#: mcrypt.gaa:153
+msgid "Prints the version number"
+msgstr ""
+
+#: mcrypt.gaa:154
+msgid "Displays license information."
+msgstr ""
+
+#: src/rfc2440.c:315
+#, c-format
+msgid "Algorithm %s is not available in OpenPGP encryption.\n"
+msgstr ""
+
+#: src/rfc2440.c:317
+#, c-format
+msgid "%s will be used instead.\n"
+msgstr ""
+
+#: src/rfc2440.c:568 src/rfc2440.c:619
+msgid "mhash_keygen_ext() failed.\n"
+msgstr ""
+
+#: src/rfc2440.c:571 src/rfc2440.c:622
+#, fuzzy
+msgid "Could not open module\n"
+msgstr "Mcrypt nemù¾e otevøít modul.\n"
+
+#: src/rfc2440.c:601
+#, c-format
+msgid "OpenPGP: Unsupported key mode %s\n"
+msgstr ""
+
+#: src/rfc2440.c:756 src/rfc2440.c:805
+msgid "mcrypt_generic_init() failed\n"
+msgstr ""
+
+#: src/rfc2440.c:768
+msgid "decryption: wrong key.\n"
+msgstr ""
+
+#: src/rfc2440.c:878 src/rfc2440.c:966
+#, c-format
+msgid "zlib error `%s'.\n"
+msgstr ""
+
+#: src/rfc2440.c:879
+#, c-format
+msgid "compress: deflate returned %d.\n"
+msgstr ""
+
+#: src/rfc2440.c:967
+#, c-format
+msgid "uncompress: inflate returned %d.\n"
+msgstr ""
+
+#: src/rfc2440.c:999
+#, fuzzy
+msgid "Will decompress input file.\n"
+msgstr "Rozbaluji výstupní soubor...\n"
+
+#: src/rfc2440.c:1055
+msgid "Output file will be compressed.\n"
+msgstr ""
+
+#: src/rfc2440.c:1165
+msgid "Unsupported OpenPGP packet!\n"
+msgstr ""
+
+#: src/popen.c:64 src/popen.c:74
+#, c-format
+msgid "command string is not correct!\n"
+msgstr ""
+
+#: src/popen.c:87 src/popen.c:90
+#, c-format
+msgid "could not create pipe\n"
+msgstr ""
+
+#: src/popen.c:95
+#, c-format
+msgid "could not fork child process\n"
+msgstr ""
+
+#: src/popen.c:102
+#, c-format
+msgid "could not close write-access of child stdin!\n"
+msgstr ""
+
+#: src/popen.c:104
+#, c-format
+msgid "could not dup2 child stdin!\n"
+msgstr ""
+
+#: src/popen.c:106 src/popen.c:123
+#, c-format
+msgid "could not close read-access of child stdin!\n"
+msgstr ""
+
+#: src/popen.c:111
+#, c-format
+msgid "could not close read-access of child stdout!\n"
+msgstr ""
+
+#: src/popen.c:113
+#, c-format
+msgid "could not dup2 child stdout!\n"
+msgstr ""
+
+#: src/popen.c:115 src/popen.c:129
+#, c-format
+msgid "could not close write-access of child stdout!\n"
+msgstr ""
+
+#: src/popen.c:125
+#, c-format
+msgid "could not fdopen child stdin pipe!\n"
+msgstr ""
+
+#: src/popen.c:131
+#, c-format
+msgid "could not fdopen child stdout pipe!\n"
+msgstr ""
+
+#: src/random.c:94
+msgid "mhash_init() failed."
+msgstr ""
+
+#: src/random.c:124
+msgid "Error while reading random data\n"
+msgstr ""
+
+#: src/random.c:148 src/classic.c:118 src/classic.c:533
+#, fuzzy
+msgid "Mcrypt failed to open module.\n"
+msgstr "Mcrypt nemù¾e otevøít modul.\n"
+
+#: src/random.c:151
+msgid "Mcrypt failed to initialize cipher.\n"
+msgstr ""
+
+#: src/rndunix.c:827
+msgid "Child had pid 0!"
+msgstr ""
+
+#: src/classic.c:227
+#, c-format
+msgid "Error in keymode '%s'.\n"
+msgstr "Chyba v klíèovacím módu '%s'.\n"
+
+#: src/classic.c:284 src/classic.c:589
+#, fuzzy
+msgid "mhash initialization failed.\n"
+msgstr "Inicializaèní vektor nebyl pou¾it.\n"
+
+#: src/classic.c:361
+msgid "Memory error\n"
+msgstr ""
+
+#: src/classic.c:513
+msgid "No valid file headers found.\n"
+msgstr "Nenalezeny platné hlavièky souboru.\n"
+
+#: src/classic.c:644 src/classic.c:717
+msgid "Corrupted file.\n"
+msgstr "Poru¹ený soubor.\n"
+
+#: src/classic.c:663
+#, fuzzy, c-format
+msgid "Unexpected error [%d]\n"
+msgstr "Neoèekávaná chyba\n"
+
+#: src/classic.c:909 src/classic.c:918
+#, fuzzy
+msgid "Decompressing the output file...\n"
+msgstr "Rozbaluji výstupní soubor...\n"
+
+#: src/classic.c:941
+#, c-format
+msgid "%s check failed\n"
+msgstr "%s kontrola selhala\n"
+
+#: src/classic.c:1054
+#, c-format
+msgid "Supported Hash Algorithms:\n"
+msgstr "Podporované Ha¹ovací Algoritmy:\n"
+
+#, fuzzy
+#~ msgid "Could not open module"
+#~ msgstr "Mcrypt nemù¾e otevøít modul.\n"
+
+#~ msgid "Warning: Using pseudo random numbers\n"
+#~ msgstr "Varování: Pou¾ívám pseudo náhodná èísla\n"
+
+#~ msgid "Re-"
+#~ msgstr "Znova "
+
+#~ msgid "Keyfile could not be locked. Ignoring it.\n"
+#~ msgstr "Nelze uzamknout klíèový soubor. Ignoruji.\n"
+
+#~ msgid "mcrypt encrypts/decrypts files using several symmetric algorithms.\n"
+#~ msgstr ""
+#~ "mcrypt za¹ifruje/de¹ifruje soubory za pou¾ití symetrických  algoritmù.\n"
+
+#~ msgid ""
+#~ "Legal parameters are:\n"
+#~ "\n"
+#~ " -d --decrypt                 decrypts\n"
+#~ " -c --config FILENAME         Use the configuration file FILENAME.\n"
+#~ "                              If not specified the .mcryptrc in your "
+#~ "home\n"
+#~ "                              directory is used.\n"
+#~ " -a --algorithm ALGORITHM     specify the encryption and decryption "
+#~ "algorithm.\n"
+#~ "                              Use the --list parameter to see the "
+#~ "supported\n"
+#~ "                              algorithms.\n"
+#~ " --algorithms_directory DIR   specify the directory where the algorithms "
+#~ "are.\n"
+#~ msgstr ""
+#~ "Správné parametry jsou:\n"
+#~ "\n"
+#~ " -d --decrypt                 De¹ifruje\n"
+#~ " -c --config SOUBOR           Pou¾ij konfiguraèní soubor SOUBOR.\n"
+#~ "                              Pokud není urèen, pou¾ije se .mcryptrc ve\n"
+#~ "                              va¹em domovském adresáøi.\n"
+#~ " -a --algorithm ALGORITMUS    urèí ¹ifrovací a de¹ifrovací algoritmus.\n"
+#~ "                              Správné parametry jsou:\n"
+
+#, fuzzy
+#~ msgid ""
+#~ " -m --mode MODE               specify the mode. Use the --list parameter\n"
+#~ "\t                        to see the supported modes.\n"
+#~ " --modes_directory DIR        specify the directory where the modes are.\n"
+#~ " -k --key KEY1, KEY2, ...     keyword(s) to use.\n"
+#~ " -f --keyfile FILENAME        file to read the keyword from.\n"
+#~ " -o --keymode MODE            specify the keyword mode. Use the --"
+#~ "keymodeslist\n"
+#~ "                               parameter to view all modes.\n"
+#~ " -h --hash ALGORITHM          specify the hash algorithm to be used, in "
+#~ "order to compute\n"
+#~ "                               the checksum. Use the --hashlist parameter "
+#~ "to\n"
+#~ "                               view all algorithms.\n"
+#~ " -s --keysize SIZE            Algorithm's key size. The default is the "
+#~ "maximum\n"
+#~ "                               supported by the algorithm.\n"
+#~ " -u --unlink                  unlink the input file after encryption/"
+#~ "decryption\n"
+#~ " -L --license                 displays license information.\n"
+#~ " -q --quiet                   suppress some non critical warnings.\n"
+#~ " -l --doublecheck             Double check for passphrase even if "
+#~ "decrypting.\n"
+#~ "    --echo                    Echo asterisks when entering the password.\n"
+#~ "    --list                    Lists the supported algorithms and modes.\n"
+#~ "    --keymodeslist            Lists the supported key modes.\n"
+#~ "    --hashlist                Lists the supported hash algorithms.\n"
+#~ "    --flush                   Immediately flush the output.\n"
+#~ "    --nodelete                Does not delete the output file even if "
+#~ "decryption\n"
+#~ "\t\t\t\tfails.\n"
+#~ " -V --verbose                 more information is displayed.\n"
+#~ " -b --bare                    Do not keep algorithm information in the "
+#~ "encrypted\n"
+#~ "                              file.\n"
+#~ " -F --force                   forces output to stdout.\n"
+#~ " -t --time                    Prints timing information.\n"
+#~ msgstr ""
+#~ " -m --mode MÓD                urèí mód. Pou¾ij parametr --list pro výpis\n"
+#~ "\t                      podporovaných módù.\n"
+#~ " --modes_directory ADRESÁØ    urèi adresáø kde jsou módy k pou¾ití.\n"
+#~ " -k --key KLÍÈ1, KLÍÈ2, ...   klíè(e) k pou¾ití.\n"
+#~ " -f --keyfile SOUBOR          soubor v nìm¾ je klíèové slovo.\n"
+#~ " -o --keymode MÓD             zadej mód klíèe. Pou¾ij --keymodeslist\n"
+#~ "                              argument pro výpis v¹ech módù.\n"
+#~ " -h --hash ALGORITMUS         urèi algoritmus který bude pou¾it\n"
+#~ "\t                      v poøadí pro poèítání\n"
+#~ "                              kontrolní souèet. Pou¾ij --hashlist "
+#~ "parametr pro\n"
+#~ "                              pro výpis v¹ech algoritmù.\n"
+#~ " -s --keysize VELIKOST        velikost klíèe algoritmu.Bez urèení je "
+#~ "maximum\n"
+#~ "                              podporovaný algoritmem.\n"
+#~ " -u --unlink                  sma¾ vstupní soubor po za¹ifrování/"
+#~ "de¹ifrování\n"
+#~ " -L --license                 zobrazí licenèní informace.\n"
+#~ " -q --quiet                   potlaè nìkterá nekritická varování.\n"
+#~ " -l --doublecheck             Zdvoj kontrolu pro klíèovací frázi\n"
+#~ "    --echo                    Zobrazuj hvìzdièky kdy¾ zadávám heslo.\n"
+#~ "    --list                    vypi¹ podporované algoritmy a módy.\n"
+#~ "    --keymodeslist            vypi¹ podporované klíèovací módy.\n"
+#~ "    --hashlist                vypi¹ podporované ha¹ovaci algoritmy.\n"
+#~ "    --flush                   okam¾itì vyprázdni výstup.\n"
+#~ "    --nodelete                nema¾ výstupní soubor dokud roz¹ifrovávaní\n"
+#~ "                              neprobìhlo.\n"
+#~ " -V --verbose                 zobraz nìkteré dal¹í informace.\n"
+#~ " -b --bare                    nenechávej informaci o algoritmu v "
+#~ "za¹ifrovaném\n"
+#~ "                              souboru.\n"
+#~ " -F --force                   vnutí výstup na stdout (standartnívýstup).\n"
+
+#~ msgid " -r --random                  Use real random data.\n"
+#~ msgstr " -r --random                  pou¾ij opravdu náhodná data.\n"
+
+#~ msgid " -n --nolock                  Do not lock files.\n"
+#~ msgstr " -n --nolock                  neuzamykej soubory.\n"
+
+#, fuzzy
+#~ msgid ""
+#~ "\n"
+#~ "    --help                    prints this help\n"
+#~ " -v --version                 prints the version number\n"
+#~ "\n"
+#~ "Report bugs to mcrypt-dev@lists.hellug.gr.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "\n"
+#~ " -h --help                    zobraz tuto nápovìdu\n"
+#~ " -v --version                 zobraz èíslo verze\n"
+#~ "\n"
+#~ "Chyby ohlaste na mcrypt@i-net.paiko.gr.\n"
+#~ "\n"
+
+#~ msgid "Error in the arguments.\n"
+#~ msgstr "Chyba v argumentech.\n"
+
+#~ msgid ""
+#~ "Algorithm: %s\n"
+#~ "Key size: %d\n"
+#~ "Mode: %s\n"
+#~ "Keyword mode: %s\n"
+#~ "Digest: %s\n"
+#~ msgstr ""
+#~ "Algoritmus: %s\n"
+#~ "Velikost klíèe: %d\n"
+#~ "Mód: %s\n"
+#~ "klíèovací mód: %s\n"
+#~ "Resumé: %s\n"
+
+#~ msgid "Timeout while waiting for file lock.\n"
+#~ msgstr "Timeout pøi èekání na souborový zámek.\n"
+
+#~ msgid "The key size parameter is ignored in that version of mcrypt.\n"
+#~ msgstr "Parametr velikosti klíèe je ignorován v této verzi mcryptu.\n"
+
+#~ msgid ""
+#~ "--bzip2 or --gzip parameters cannot be used when dealing with streams.\n"
+#~ msgstr ""
+#~ "--bzip2 èi --gzip parametry nemohou být pou¾ity pøi práci se streamy.\n"
+
+#~ msgid ""
+#~ "Supported Algorithms and modes:\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Podporované Algoritmy a módy:\n"
+#~ "\n"

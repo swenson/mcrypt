@@ -1,0 +1,22 @@
+#!/bin/sh
+# this script tries to emulate the unix crypt command using mcrypt
+
+echo "Unix crypt(1) emulation program using mcrypt(1)." >&2
+echo "" >&2
+
+if [ "$1" = "-h" ] || [ "$1" = "--help" ]
+then
+        echo 'Usage: crypt password <file_in >file_out' >&2
+        echo 'Usage: crypt <file_in >file_out' >&2
+        exit 1
+else
+	echo "Use crypt -h for more help." >&2
+fi
+
+if [ -z "$1" ]
+then
+ mcrypt -a enigma -o scrypt -m stream --bare --force
+else
+ mcrypt -a enigma -o scrypt -m stream --bare --key $1 --force
+fi
+

@@ -1,0 +1,572 @@
+16Nov2008: Version 2.6.8
+	- Updated non valid C code to comply with standard ANSI C
+	  Affects openpgp code.
+
+07Nov2007: Version 2.6.7
+	- Corrected bugs related to freeing mhash (const) data
+	- Corrected bugs in the win32 random gatherer
+	- The code is now under GPLv3
+
+9Jun2007: Version 2.6.6
+	- Updates in OpenPGP code (Timo)
+	- Made the OpenPGP file format the default.
+
+16Mar2003:
+	- Corrections in getpass(), to work in Solaris. Patch
+	  by Rob Henderson <robh@cs.indiana.edu>
+
+08Mar2003:
+	- Updated the documentation
+	- The algorithm and mode command line selection is now
+	  case insensitive.
+
+21Feb2003: Version 2.6.4
+	- Updated Spanish-Argentina translation by Ariel
+	Fermani <the_end@bbs.frc.utn.edu.ar>.  
+	- Some fixes for compiling under win32.
+        - Some fixes to allow compiling gaaout.c with external
+          CFLAGS and CPPFLAGS.
+
+04Oct2002: Version 2.6.3
+	- Added support for 64 bit file offsets. Based on patch by
+          Keven Belanger <kbelanger@logicon.ca>.
+
+23Jun2002: Version 2.6.2
+	- Corrections in localization
+	- Added Spanish-Argentina translation. Translated by Ariel
+	Fermani <the_end@bbs.frc.utn.edu.ar>.  
+
+15Jun2002: Version 2.6.1
+	- Better error checking
+	- Added rndunix random gatherer from gnupg. It is
+	  a gatherer for random bytes, written by Peter Gutmann.
+	- Added some kind of random byte generator for Win32
+	  systems.
+	- Corrected bug in configuration file parsing.
+	- Corrected bug in bare mode which put an IV in the 
+	  encrypted file even if the mode did not support IV.
+
+29May2002: Version 2.6.0
+	- Added OpenPGP support (added by Timo Schulz <ts@winpt.org>)
+	- Removed all of file locking code.
+	- Several improvements and corrections on the old 
+          codebase (still a mess).
+
+11Mar2002: Version 2.5.13
+	- Corrected stream modes in block algorithms
+
+29Jan2002: Version 2.5.12
+	- Added some missing files
+
+26Jan2002: Version 2.5.11 
+	- SHA1 is the default digest used
+
+01Dec2001:
+	- Added --time option
+
+24Sep2001: Version 2.5.10
+	- Corrected Makefile
+	- Corrected bug in key checking
+
+15Sep2001: Version 2.5.9
+	- Corrected bug which made mcrypt block while writing the header
+	  (patch by Jerome Bertorelle <jerome.bertorelle@noos.fr>)
+	- Several cleanups
+
+08Sep2001: Version 2.5.8
+	- Added option for staticaly linking mcrypt
+	- '--gzip' and '--bzip2' options now work even when handling streams
+	  (based on patch by Stefan Hetzl <shetzl@teleweb.at>)
+	- Removed libmcrypt-nm and libmcrypt 2.2 support
+	- Updated magic file (for file(1) program)
+	- Updated included gettext
+
+04Jun2001: Version 2.5.7 released
+	- Fixes for the new libmcrypt 
+
+27Apr2001: Version 2.5.6 released
+	- Updated locales 
+
+02Oct2000: Version 2.5.5 released.
+	- Support for libmcrypt linked against libdl
+	- Some more verbose error messages
+
+19May2000: Version 2.5.4 released.
+	- Support for the libmcrypt-nm.
+	- bugfixes in argument handling
+
+02Apr2000: Version 2.5.3 released.
+	- mcrypt does not depend now in the new libmhash. It can work
+	  with the older version as well.
+
+21Mar2000: Version 2.5.2 released.
+	- Adapted to the libmcrypt 2.4 API
+	- The unix crypt mode parameters were changed.
+	  In order to use it, you should use the parameters:
+          "-a crypt --bare" AND "--keymode scrypt" (instead of "--keymode asis").
+	- The '-' file name is now used to refer to stdin.
+
+08Mar2000: Version 2.5.1 released.
+	- Mcrypt now checks the keysizes before asking for a passphrase.
+	- Corrected bugs in command line arguments proccessing.
+
+06Mar2000: Version 2.5.0 released.
+	- The way crc32 is stored into the encrypted file has changed.
+        - Now mcrypt supports hash algorithms.
+        - Updated manpage.
+	- The option --nodelete was added. If specified it will not delete
+          the output file, even if crc32 check fails.
+	- Mcrypt can now compile using the 2.2.5 version of libmcrypt.
+          That way it looses some of it's functionality.
+        - Mcrypt distribution no longer includes libmcrypt.
+	- New (extendable) File format. Moved to version 2.5.0 since not all planned
+	  improvements were added (to justify the 3.0.0 version).
+
+19Jan2000: Corrected a minor bug in src/extra.c, where bzero used
+               sizeof() for malloc'ed data.
+
+10Dec1999: Corrected a bug in src/mcrypt.c, encrypt_general() function.
+               It did not use the random number generator properly for
+               stream ciphers.
+
+03Dec1999: Corrected a serious bug in src/extra.c, read_iv function.
+               It didn't work when not using streams.
+           Corrected a bug in mcrypt.c, function encrypt_general(), which 
+               made the program to crash when a smaller than the maximum 
+               keysize was specified at the command line.
+           Documentation was updated.
+           Bugfix in bare decryption for block algorithms. When a file was 
+               smaller than a fixed number it was not decrypted as it should. 
+
+02Dec1999: Mcrypt can now compile in systems were libintl.h was not found
+               without disabling nls, patch by Sascha Schumann.
+28Nov1999:
+           --keygen_directory parameter was replaced by --keymode_directory.
+
+26Nov1999:
+           --algorithms_directory, --modes_directory, --keygen_directory options added.
+               the user can now specify where the libmcrypt modules are.
+
+25Nov1999: Some speedups in the bare mode. It is much faster than the bare
+               mode of previous mcrypt versions. Normal mode is still too
+               slow at decryption time, but it will be fixed soon.
+
+23Nov1999: Mcrypt now uses the libmcrypt 2.3, and so many things have
+               changed internally.
+               most algorithms have changed their name according to libmcrypt name
+               most key modes have their name according to libmcrypt name
+               the file format has changed (check FORMAT)
+           Solaris DES compatibility has changed. In order to
+                be compatibe with des(1) mcrypt needs the following
+                parameters "-a des --keymode sdes --bare --noiv"
+           Unix crypt compatibility has changed. In order to
+                be compatibe with crypt(1) mcrypt needs the following
+                parameters "-a crypt --keymode asis --bare"
+           info pages were removed. I couldn't maintain them anyway.
+
+10Nov1999:  Corrected bug, where compilation failed if GZIP or BZIP2 were not
+               defined. Now mcrypt checks if these files exist before
+               executing them.
+            Mcrypt was ported to win32 (comes as a different distribution).
+
+04Nov1999:  Corrected some defines in the libufc included, so it works fine
+               in 64bit machines. Pointed out by Robin Humble <rjh@pixel.maths.monash.edu.au>
+               and Larry Snyder <larrys@lexis-nexis.com>
+
+03Nov1999:  Replaced "grep -q" with "grep >/dev/null" in tests/ciphertest.nonfree
+		
+16Oct1999:  version 2.2.5 was released.
+            Mcrypt is updated to conform to the new libmcrypt API.
+            Greek translation is updated.
+            RC4 was added.
+
+15Oct1999:  Bugfix in fwrite in bare mode. 
+               Pointed out by Koblinger Egmont <egmont@fazekas.hu>
+            mcrypt is now under CVS control.
+
+14Oct1999:  Serpent was added.
+            Changes in the man page.
+
+11Oct1999:  Bugfix in fork() in mcrypt.c. 
+               Pointed out by Derelittus Maloratus <tnt@acdc.zzn.com>.
+
+10Oct1999:  Bugfix in sha1.
+            Option --flush was added.
+
+04Oct1999:  Bugfixes in RC2, RC6.
+            RIJNDAEL was added.
+
+20Sept1999: Fixes in RC2, RC6 and SAFER+ code, so they work the same way in
+               big-endian and little-endian machines.
+            The porting of SERPENT, MARS and RIJNDAEL is not finished, they
+               do not work right in bigendian machines.
+
+19Sept1999: Changes in the library:
+               SERPENT was added in 128,192 and 256 key modes.
+
+15Sept1999: Changes in the library:
+               MARS (non-free) and RIJNDAEL were added in 128,192 and 256 key modes.
+               RC6 was splitted to RC6-128, RC6-192 and RC6-256 (the old RC6 is equal to RC6-256)
+               RC2 was splitted to RC2-128, RC2-256 and RC2-1024 (the old RC2 is equal to RC2-1024)
+
+8Sept1999: noecho option was changed to echo. Not echoing asterisks is the
+               default now, since asterisks do work right in all systems.
+
+7Sept1999: Changes in src/getpass.c. There was a bug, when the --noecho,
+               option was used. Pointed out by Ed Baxter <Ed.Baxter@pii.com>.
+               Fixed.
+
+21Aug1999: Added --enable-static-link configure option. This option links
+               statically mcrypt, usefull where there is no need for a
+               separate library.
+
+28Jun1999: Changed zip support (bzip2,gzip) during decryption. 
+           Polish translation for mcrypt was updated.
+
+26Jun1999: Fixed Makefile.am.
+
+23Jun1999: version 2.2.2 released
+           SAFER+, LOKI97 and CAST-256 added. RC6 was changed. Check
+               libmcrypt/ChangeLog.
+
+18Jun1999: mdecrypt link is now properly created.
+
+16Jun1999: Libmcrypt: xTEA algorithm changed (check libmcrypt/ChangeLog).
+
+12Jun1999: Changes in the documentation.
+           Polish language support by Janusz A. Urbanowicz <alex@bofh.net.pl>.
+
+11Jun1999: Capability support for mlock(), experimental (it does not work).
+           Mcrypt now uses automake.
+
+09Jun1999: src/hex.c: A bug was found in the way it handles null characters.
+               Fixed.
+           src/mcrypt.c: A bug was found when using hex and hash/4bit modes.
+               Fixed.
+
+02Jun1999: version 2.2.0 released
+           src/keys.c: bufix for a variable that was malloced but not freed.
+           src/getpass.c: getpass() does not return any more a static char*,
+              changed to a char* which is malloced.
+
+01Jun1999: src/extra.c: Bugfix when entering key in a hash mode.
+           src/keys.c: Bugfixes.
+
+29May1999: libmcrypt 2.1 was added.
+              - so blowfish is renamed to blowfish-448 and blowfish-128,-192,
+              -256 were added.
+              - added md5hash keymode, default is still sha1hash (or just hash).
+              - nOFB mode was added. n is the algorithm's block size
+              - src/mcrypt.c, src/getpass.c: --noecho option added.
+
+25May1999: Twofish-192 is now the default algorithm.
+           CRC32 was moved to the end of the file. Now mcrypt can work
+              fine without temporary files. So this version is incompatible
+              with all the previous ones.
+           Some non-critical bugfixes in cfb and ofb modes.
+
+24May1999: src/mcrypt.c: waitpid after popen was removed.
+
+23May1999: src/mcrypt.c, src/extra.c: --doublecheck option added. With this
+              option passwords are checked twice even if decrypting.
+           src/mcrypt.c, src/lock.c: --nolock option added. With this
+              option no locks are used. This is usefull if you encrypt
+              in a nfs exported directory.
+           src/bits.c: Changed code to be faster and simpler.
+
+19May1999: src/keys.c, src/extra.c: Now the key handling moved in
+              keys.c completely. get_password() now only returns the
+              plain password.
+
+18May1999: Library: This is not the same with libmcrypt any more.
+              This library may have less options than libmcrypt.
+           po/: Czech language support by Robert Hanzlik (robi@junyks.cz)
+
+17May1999: src/mcrypt.c: Now full and half mode were again replaced by
+              8bit and 4bit modes. Bugfix for these modes. Now they seem
+              to work fine.
+           src/keys.c: gen_key() changed so that strlen() is no longer
+              needed. This allows mcrypt to work fine on an IRIX 6.4
+
+16May1999: src/keys.c: gen_key.c salt use has changed.
+
+9May1999:  src/mcrypt.c: Many, many changes.
+              Used indent to clear up some code.
+              Twofish-128 is now the default algorithm.
+              7bit mode was removed.
+              8bit and 4bit modes renamed to full and half.
+              hash key mode added and is the default. It uses sha-1 to
+                 convert a passphrase to a key.
+                 thanks to Alexander Demenshin <aldem@techie.com>
+              encrypted file's format changed. A salt is added for the hash
+                 key mode. 20 bytes are reserved for future use.
+              -i and --bit were replaced by -o and --keymode.
+              --bare mode works as before and supports hash but no salt.
+           so mcrypt 2.2 is not compatible with the 2.1 version.
+
+
+7May1999:  version 2.1.19 released.
+           Non-free version is enabled by default. The name still remains
+           non-free despite tha fact that in most countries it is free:)
+           src/mcrypt.c: 4bit mode is now the default.
+
+6May1999:  src/sunlink.c: Renamed to unlink.c and removed the safe_unlink
+              capability. Since some programs are dedicated in doing
+              that job there is no need for maintaining that. Simple
+              unlink still overwrites the file with nulls.
+           src/bits.c:
+           src/mcrypt.c: 4 bit mode added. In that mode only 4 bits
+              of every character are read. Thus more characters are
+              needed but it is much more safer.
+           src/defines.h: changed nls defines etc. to compile happily
+              again in my glibc 2.1.
+
+29Apr1999: version 2.1.18 released
+           library: RC6 and IDEA now work on both little and big endian 
+              machines.
+           doc/magic: Magic file for file(1) added thanks to
+              Koblinger Egmont <egmont@fazekas.hu>
+           src/mcrypt.c: Now --bare flag encrypts directly to the output
+              file (or stdout) without using temp files.
+           library: Changed lib/mcrypt.c so null passwords are accepted
+              for rc2.
+           Now nonfree version is included in the free but must
+              be enabled in compile time using configure --enable-non-free
+
+26Apr1999: src/mcrypt.c: Compability mode with des(3) added.
+           library and mcrypt.c: Many internal changes.
+
+25Apr1999: library: Twofish-192 and Twofish-256 added. Twofish (128) was
+              renamed to Twofish-128. This is the code applied for aes
+              by counterpane systems.
+
+25Apr1999: library: The library now clears (bzero's) all keywords used
+              within the library. 
+
+24Apr1999: version 2.1.17 released
+           mcrypt.texi and mcrypt.info were added. I do not know much
+             about their syntax so they may not be right.
+           Now mcrypt is splitted in two packages. mcrypt-x.y.z-nonfree
+             and mcrypt-x.y.z. The nonfree version contains the patented
+             algorithms.
+
+23Apr1999: src/mcrypt.c: Algorithm and mode specified in the command line are
+             now checked in a loop by calling get_algorithms_name. This may
+             lead to a problem since 3way is no longer acceptable(3-way is
+             the correct) but since the code is much more clear it is
+             acceptable.
+           library: IDEA and RC6 algorithms added. These algorithms are
+             patented so you need a license to use them. More information
+             can be found at the file doc/README.nonfree.
+
+20Apr1999: version 2.1.16 released
+           src/mcrypt.c: Fixed a bug(?) in the popen call (when calling for 
+             gzip or bzip2). Actually it did not return NULL if the
+             program couldn't be executed. Corrected thanks to
+             Vasilis Vasaitis (vvas@hal.csd.auth.gr)
+
+19Apr1999: Removed a bug in the library. If all threads were used, memory
+             leaks were created.
+           RC2 algorithm added.
+
+18Apr1999: version 2.1.15 released
+           src/mcrypt.c --gzip and --bzip2 options added. If specified mcrypt
+             calls gzip or bzip2 and compresses the input before encryption.
+           src/extra.c: Unix Crypt is now reported as algorithm when using 
+             verbose mode.
+
+17Apr1999: libmcrypt: 8bit OFB mode added.
+
+27Mar1999: -O2 removed for lib/twofish.c. It compiles faster now but
+             the speed of encryption for that algorithm is slightly
+             reduced.
+
+26Mar1999: Now gaa 1.5.1 is used, so arguments in the command
+             line take precendence over the .mcryptrc file.
+
+23Mar1999: Some minor changes in the Makefiles to be closer to the GNU
+             coding standards.
+
+16Mar1999: src/bits.h: Changed so it can compile happily on HP-UX 10.24.
+             pointed out by R Sriram <rsriram@krdl.org.sg>
+
+13Mar1999: src/mcrypt.c: ".dec" files are properly deleted if a signal
+             is received.
+
+11Mar1999: version 2.1.14 released
+
+10Mar1999: src/getpass.c: Added from the shadow suite (981228). Now mcrypt
+             prints asterisks when the password is typed. Original code
+             by Julianne Frances Haugh, modified by Pavel Machek <pavel@ucw.cz>
+             Only minor additions to fit in mcrypt (and use a more random
+             way of printing asterisks).
+           src/mcrypt.c: Minor bugfixes.
+
+09Mar1999: src/mcrypt.c: Minor bugfixes. Output files are not removed if
+             they cannot be opened.
+
+03Mar1999: src/extra.c, src/mcrypt.c: Now mcrypt asks whether to overwrite
+             a file or skip it.
+
+02Mar1999: version 2.1.13 released
+
+26Feb1999: src/enigma.c, lib/des.c: Changed all long integers to word32
+              and sword32 so it works on all platforms (64bit and 32bit).
+              Pointed out by Dan Stromberg <strombrg@nis.acs.uci.edu>
+           *.c: malloc is now checked for its return value. If it is
+              NULL mcrypt retries to allocate memory after one second
+              and if it fails again, mcrypt exits.
+
+23Feb1999: src/mcrypt.c, src/environ.c: Added environment support. Now
+             the user may use MCRYPT_ALGO, MCRYPT_MODE, MCRYPT_BIT_MODE
+             and MCRYPT_KEY to specify the algorithm, the mode and the key.
+             Suggested by Koblinger Egmont <egmont@fazekas.hu>
+
+18Feb1999: Makefile.in: Links are now relative and not absolute.
+           mcrypt.1: Some corrections in the documentation.
+           src: mcrypt.c: A warning is issued when the keyword(s) are
+             specified in the command line.
+           Pointed out by Koblinger Egmont <egmont@fazekas.hu>
+
+17Feb1999: version 2.1.12 released
+           lib/twofish.c: Added from GNUPG. Now twofish supports only
+             128bit encryption but it works. Minor changes.
+           lib/twofish: Removed. That AES API was a real problem.
+           src/mcrypt.c: --8bit and --7bit replaced with --bit 7 or 8.
+
+16Feb1999: src/mcrypt.c, src/mcrypt.gaa: Mcrypt now uses the gnu
+             argument analyzer instead of getopt. Now we can use a
+             configuration file instead of reading from command line.
+
+15Feb1999: src/sunlink.c, src/mcrypt.c: Unlink and safe unlink changed.
+             Now simple unlink overwrites the file with nulls and safe
+             unlink with random strings seven times.
+
+14Feb1999: src/mcrypt.c: Default bit mode for the key changed to 8bit.
+           configure.in: Added system checking.
+           src/mcrypt.c: A warning is issued if not using a real random
+             device like /dev/random.
+           src/random.c: Added an #ifdef so it compiles hapilly in
+             all systems.
+
+13Feb1999: version 2.1.10 released
+           src/mcrypt.c, src/hex.c: Added hex mode. Now the keyword can
+             be specified in hex using the --hex parameter. Thus there is no 
+             limit to the range of input characters.
+           src/defines.h, src/random.c: Added /dev/(s,u)random support for
+             linux and openbsd, using some configure scripts from GNUPG.
+           src/mcrypt.c, src/extra.c: fixed a bug in unix crypt
+           src/extra.c: fixed a bug in the keyfile handling
+
+11Feb1999: The --file parameter changed to --keyfile
+
+09Feb1999: src/mcrypt.c: --file parameter added. Now keywords can be specified
+             using a file. One keyword is read per line.
+           lib/lcrypt.c: Better use of mutex locks.
+           src/sunlink.c: Removed the srand(time(0)). Now it is only called 
+             only in main() in src/mcrypt.c.
+           mcrypt.1: Added twofish and some information about tea.
+           lib/twofish: The algorithm works as it should. (passed the ciphertext
+             tests found in counterpane system's site)
+
+08Feb1999: version 2.1.9 released
+           src/bits.c: Serious Bugfixes. In 7bit mode all keywords were reduced 
+             to 56bit. Fixed.
+           * So version 2.1.9 is incompatible with all previous versions
+             when the key is entered in 7bit mode.
+           lib/twofish: The twofish algorithm is implemented in the library
+             using the AES API. Experimental.
+           lib/lcrypt.c: If posix_threads found use mutex locks to
+             make the init_mcrypt functions reentrant.
+           src/crypt.c/h: changed to enigma.c/h
+           src/mcrypt.c: srand(time(0)) is called once in the main()
+             function. Thus being more random(?)...
+
+03Feb1999: version 2.1.7 released
+           src/locks.c: src/mcrypt.c: No longer exits when lock timeout is 
+             reached, returns -1 and the file is skipped.
+           lib/tean.c: Code changed to be compatible with both little
+             and big-endian. 
+             Uncompabilty reported by Igor Schein <igor@txc.com>
+             TEA is no longer compatible with previous versions of mcrypt.
+           lib/swap.c: Included strings.h (via libdefs.h) for bzero. Needed 
+             in systems that do not support memset. 
+             Reported by Xenitellis Simos <S.Xenitellis@rhbnc.ac.uk>
+
+01Feb1999: version 2.1.6 released
+           mcrypt.1: The man page is (at last) corrected and updated.
+             Cleared code in lib/lcrypt.c and lib/lcrypt.h. Removed some
+             memory leaks. Code cleared in src/mcrypt.c, some memory leaks
+             also removed.
+             The key padding with nulls (if it was too small) moved in 
+           lib/lcrypt.c. CAST-128 is no longer compatible with previous
+            versions when the key is more than 10 bytes.
+
+31Jan1999: lib/lcrypt.c: CBC and ECB encryption added into the library.
+             CFB mode also added.
+
+30Jan1999: libufc/ufc-crypt.h: Code changed to be supported from
+             the main config.h file. 
+
+29Jan1999: version 2.1.5 released
+           src/lcrypt.c: An error was found in the key handling. Corrected.
+           src/tean.c: The Tiny Encryption Algorithm was added.
+           NLS: code updated to gettext-0.10.35
+           lib/: The library code is now placed there.
+
+           version 2.1.4 released
+           src/cast.c: Added CAST-128. Adopted from the lsh project.
+             Originally written by Steve Reid <sreid@sea-to-sky.net>
+           src/lcrypt.c: The library is now more functional. It supports
+             multithreading (I think so:) .
+
+21Jan1999: src/mcrypt.c: -e flag was removed (it was optional anyway)
+             -t --type parameter was replaced by -a --algorithm parameter.
+           src/locks.c: Added. Now locking is performed to input (read) and 
+             output (write) files via fcntl.
+
+20Jan1999: version 2.1.3 released
+           src/mcrypt.c: Many bugfixes. When specifying many files and one key
+             via --key the key length was reduced for every file. Fixed.
+           src/mcrypt.c: signal handling.
+             functions.c: Added this file to make bzero() and signal() work in
+             POSIX systems that use memset() and sigaction().
+           src/mcrypt.c: Output files are now deleted if encryption/decryption
+             fails. (The same if we get a signal)
+           src/defines.h: Checks were added to find 32bit, 16bit and 8bit
+             integers. (using defines in configure.in)
+
+17Jan1999: src/mcrypt.c: The number of bytes of plaintext of the last block is now
+             represented in one byte (previously 4). So that version is not
+             compatible with previous ones. Minor changes to use fread and
+             fwrite instead of read and write (much faster).
+           src/mcrypt.c: The crc32 is now stored encrypted in the file.
+           src/blowfish.c: The algorithm changed according to the "new" blowfish.
+
+16Jan1999: src/crc32.c: Added. CRC32 check added.
+
+15Jan1999: version 2.1.1 released
+            Makefile in ufc-crypt is now added into the main configure script.
+            Algorithm information are now stored into encrypted files, so
+            that version is also incompatible with previous ones if the
+            --bare flag is not specified.
+            NLS support is added (via gettext-0.10). Greek language support.
+
+13Jan1999: Major version update 2.1.0
+           Added libmcrypt.a (lcrypt.c)
+             DES, 3DES, Blowfish, 3-WAY and GOST are implemented there.
+           Code cleared in mcrypt.c
+           Proper header files were created (at last!)
+           Because of these changes GOST, 3-WAY and DES (and tripleDES) are 
+           not compatible with previous versions of this program. 
+
+12Jan1999: Added unix crypt compability (libufc is included to implement
+           the crypt() needed in unix crypt algorithm).
+           DES 7bit mode is now working.
+           Minor changes in sunlink.c (prints a warning when more than one 
+           hard links for a file exist)
+
+18Dec1998: Added src/sunlink.c and references to src/mcrypt.c. Now the -u
+           flag can be used to delete (secure delete) the input file.
+
+17Dec1998: Added mcrypt.1. At last a manpage!
